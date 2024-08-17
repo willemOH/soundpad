@@ -1,8 +1,8 @@
 # Project Name
-TARGET = Blink
+TARGET = soundpad
 
 # Sources
-CPP_SOURCES = Blink.cpp 
+CPP_SOURCES = main.cpp 
 
 # Library Locations
 LIBDAISY_DIR = ./libDaisy
