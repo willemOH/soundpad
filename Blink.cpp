@@ -9,26 +9,20 @@ DaisySeed hardware;
 
 int main(void)
 {
-    // Declare a variable to store the state we want to set for the LED.
-    bool led_state;
-    led_state = true;
-
-    // Configure and Initialize the Daisy Seed
-    // These are separate to allow reconfiguration of any of the internal
-    // components before initialization.
     hardware.Configure();
     hardware.Init();
-
-    // Loop forever
+    
+    Switch recButton;
+    Switch playButton;
+    recButton.Init(hardware.GetPin(29), 1000);
+    playButton.Init(hardware.GetPin(30), 1000);
+    
+    //update loop
     for(;;)
     {
-        // Set the onboard LED
-        hardware.SetLed(led_state);
+        recButton.Debounce();
+        hardware.SetLed(recButton.Pressed());
 
-        // Toggle the LED state for the next time around.
-        led_state = !led_state;
-
-        // Wait 500ms
-        System::Delay(500);
+        System::Delay(1);
     }
 }
