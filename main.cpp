@@ -1,10 +1,13 @@
 #include "daisy_seed.h"
 #include "main.h"
-
+#include "core_cm7.h" //measuring
 // Use the daisy namespace to prevent having to type
 // daisy:: before all libdaisy functions
 using namespace daisy;
 using namespace daisysp;
+
+#define LOGG // start serial over USB Logger class
+#define MEASURE // measure MCU utilization
 
 // Declare a DaisySeed object called hardware
 DaisySeed hardware;
@@ -62,6 +65,11 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
     float a, b;
     //float sigGate;
     
+	// measure MCU utilization
+	#ifdef MEASURE
+	// measure - start
+	DWT->CYCCNT = 0;
+	#endif
 
 	// audio
 
@@ -69,7 +77,6 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
     {
 
 		// record
-
 		if (record)
 		{
 			// input
@@ -92,7 +99,8 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 			out[i] = sigR;
 			out[i + 1] = sigL;
 
-		} else {
+		} 
+		else {
 
 				sIndex = sampleSettings.sPhaseStart;		
 
@@ -117,9 +125,15 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 					out[i]  = sigL;
 		    		out[i + 1] = sigR;
 				}
-				out[i]  = sigL;
-		    	out[i + 1] = sigR;
 		}
+	// measure MCU utilization
+   	#ifdef MEASURE
+	// measure - stop
+	if (DWT->CYCCNT > 390000)
+	{
+		hardware.SetLed(true);
+	}
+	#endif
     }
 
 }
@@ -139,6 +153,14 @@ int main(void)
     
 	System::Delay(100);
     // sampler - setup
+
+	// logging over serial USB
+	#ifdef LOGG
+	hardware.StartLog(true); // start log but don't wait for PC - we can be connected to a battery
+	hardware.PrintLine("monitoring started");
+	#endif
+	
+
 	fillBuffer();
 	sIndex = 0.0f;
 	sFreq = 440.0f;
@@ -157,7 +179,8 @@ int main(void)
 
     //update loop
     for(;;)
-    {
+    { 
+		
         recButton.Debounce();
         hardware.SetLed(recButton.Pressed());
 		RecordPrepare(recButton.Pressed());
