@@ -6,7 +6,7 @@
 using namespace daisy;
 using namespace daisysp;
 
-#define LOGG // start serial over USB Logger class
+//#define LOGG // start serial over USB Logger class
 //#define MEASURE // measure MCU utilization
 
 // Declare a DaisySeed object called hardware
@@ -159,10 +159,12 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 					}
 					out[i]  = sigL;
 		    		out[i + 1] = sigR;
-					 // Set debug flag and store sIndex value
+				#ifdef LOGG
+				// Set debug flag and store sIndex value
                 printFlag = true;
                 sIndexDebug = sIndex;
 				loopstartdebug = sampleSettings.sPhaseEnd;
+				#endif
 				}
 				else{
 					printFlag = true;
@@ -226,8 +228,10 @@ int main(void)
     //update loop
     for(;;)
     { 
-		//hardware.PrintLine("float test: %f", 100.00f);
+		//hardware.PrintLine("float test: %f", 100.00f); 
+		#ifdef LOGG
 		PrintDebugInfo();
+		#endif
         recButton.Debounce();
         hardware.SetLed(recButton.Pressed());
 		//RecordPrepare(recButton.Pressed());
