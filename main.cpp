@@ -75,15 +75,15 @@ void PrintDebugInfo()
     {
 		        // Convert loopstartdebug to integer and print
         int loopstartdebugInt = static_cast<int>(loopstartdebug);
-       // hardware.PrintLine("phaseEnd = %d", loopstartdebugInt);
+       hardware.PrintLine("loopstart = %d", loopstartdebugInt);
 
         // Convert sIndexDebug to integer and print
-        int sIndexDebugInt = static_cast<int>(sIndexDebug);
+       // int sIndexDebugInt = static_cast<int>(sIndexDebug);
        // hardware.PrintLine("sIndex = %d", sIndexDebugInt);
 
        // hardware.PrintLine("LoopStart = %d", static_cast<int>(sampleSettings.sPhaseLoopStart));
 
-		hardware.PrintLine("sIndexRecord = %d", static_cast<int>(sIndexRecordDebug));
+		//hardware.PrintLine("sIndexRecord = %d", static_cast<int>(sIndexRecordDebug));
         printFlag = false;
     }
 }
@@ -163,14 +163,14 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 				// Set debug flag and store sIndex value
                 printFlag = true;
                 sIndexDebug = sIndex;
-				loopstartdebug = sampleSettings.sPhaseEnd;
+				loopstartdebug = sampleSettings.sPhaseLoopStart;
 				#endif
 				}
 				else{
 					printFlag = true;
 					sIndex = 0;
 					sIndexDebug = sIndex;
-					loopstartdebug = sampleSettings.sPhaseEnd;
+					//loopstartdebug = sampleSettings.sPhaseEnd;
 				}
 		}
 	
@@ -216,8 +216,8 @@ int main(void)
 	//sGate = false;
 	//sGatePrev = false;
 	sampleSettings.sPhaseStart = 48000.0f * 0.0f;
-	sampleSettings.sPhaseLoopStart = 48000.0f * 0.1f;
-	sampleSettings.sPhaseLoopEnd = 48000.0f * 0.5f;
+	sampleSettings.sPhaseLoopStart = 48000.0f * 0.0f;
+	sampleSettings.sPhaseLoopEnd = 48000.0f * 0.0f;
 	sampleSettings.sPhaseEnd = 48000.0f * 1.0f;
 	sampleSettings.sLength = sampleSettings.sPhaseEnd;
 
@@ -234,7 +234,7 @@ int main(void)
 		#endif
         recButton.Debounce();
         hardware.SetLed(recButton.Pressed());
-		//RecordPrepare(recButton.Pressed());
+		RecordPrepare(recButton.RisingEdge());
         record = recButton.Pressed();
         System::Delay(1);
     }
