@@ -217,7 +217,7 @@ int main(void)
 	//sGatePrev = false;
 	sampleSettings.sPhaseStart = 48000.0f * 0.0f;
 	sampleSettings.sPhaseLoopStart = 48000.0f * 0.0f;
-	sampleSettings.sPhaseLoopEnd = 48000.0f * 0.0f;
+	sampleSettings.sPhaseLoopEnd = 48000.0f * 0.5f;
 	sampleSettings.sPhaseEnd = 48000.0f * 1.0f;
 	sampleSettings.sLength = sampleSettings.sPhaseEnd;
 
