@@ -7,11 +7,9 @@
 using namespace daisy;
 using namespace daisysp;
 
-
 //#define LOGG // start serial over USB Logger class
 //#define MEASURE // measure MCU utilization
 
-// Declare a DaisySeed object called hardware
 DaisySeed hardware;
 
 float sysSampleRate;
@@ -22,7 +20,6 @@ volatile bool printFlag = false;
 volatile float sIndexDebug = 0.0f;
 volatile float loopstartdebug = 0.0f;
 volatile uint32_t sIndexRecordDebug = 0.0f;
-
 
 // sampler
 #define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
@@ -40,7 +37,6 @@ bool sGate, sGatePrev; //
 SampleSettings sampleSettings;
 bool record;
 
-
 // demo
 void fillBuffer()
 {
@@ -55,8 +51,6 @@ void fillBuffer()
 	{
 		float signal = osc.Process();
 		Buffer.setValue(i, signal, signal);
-		/* sBufferR[i] = osc.Process();
-		sBufferL[i] = sBufferR[i];	 */
 	}
 	// Print the size of sBufferL
     size_t sizeOfsBufferL = sizeof(BufferL) / sizeof(BufferL[0]);
@@ -78,18 +72,9 @@ void PrintDebugInfo()
 {
     if (printFlag)
     {
-		        // Convert loopstartdebug to integer and print
         int loopstartdebugInt = static_cast<int>(loopstartdebug);
-       hardware.PrintLine("loopstart = %d", loopstartdebugInt);
-
-        // Convert sIndexDebug to integer and print
-       // int sIndexDebugInt = static_cast<int>(sIndexDebug);
-       // hardware.PrintLine("sIndex = %d", sIndexDebugInt);
-
-       // hardware.PrintLine("LoopStart = %d", static_cast<int>(sampleSettings.sPhaseLoopStart));
-
-		//hardware.PrintLine("sIndexRecord = %d", static_cast<int>(sIndexRecordDebug));
-        printFlag = false;
+       hardware.PrintLine("loopstart = %d", sampleSettings.sPhaseLoopStart);
+    	printFlag = false;
     }
 }
 
@@ -98,7 +83,6 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
                    size_t                                size)
 {
 	float sigR, sigL = 0.0f;
-    float a, b;
     //float sigGate;
     
 	// measure MCU utilization
@@ -111,7 +95,6 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 
     for (size_t i = 0; i < size; i += 2)
     {
-		
 		// record
 		if (record)
 		{
@@ -132,16 +115,11 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 					printFlag = true;
 				}
 			
-			
 			// pass through
 			out[i] = sigR;
 			out[i + 1] = sigL;
-
 		} 
-		else {
-
-				//sIndex = sampleSettings.sPhaseStart;		
-
+		else {	
 				if (sIndex < sampleSettings.sPhaseEnd)
 				{
 					sigL = Buffer.getSample(sIndex).left;
@@ -156,10 +134,7 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 					out[i]  = sigL;
 		    		out[i + 1] = sigR;
 				#ifdef LOGG
-				// Set debug flag and store sIndex value
                 printFlag = true;
-                sIndexDebug = sIndex;
-				loopstartdebug = sampleSettings.sPhaseLoopStart;
 				#endif
 				}
 				else{
@@ -204,7 +179,6 @@ int main(void)
 	hardware.PrintLine("monitoring started");
 	#endif
 	
-
 	fillBuffer();
 	sIndex = 0.0f;
 	sFreq = 440.0f;
