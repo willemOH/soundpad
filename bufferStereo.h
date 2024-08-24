@@ -13,6 +13,10 @@ private:
     float* bufferL;
     float* bufferR;
 
+    uint32_t start;
+    uint32_t end;
+    uint32_t size;
+
     struct StereoPair{
         float left;
         float right;
@@ -36,9 +40,13 @@ private:
             return {bufferL[index], bufferR[index]};
     } 
 
+    uint32_t toMainBufferIndex(uint32_t index)const{
+        return {index + start};
+    }
+
 public:
-    BufferStereo(float* bufL, float* bufR) 
-        : bufferL(bufL), bufferR(bufR) {}
+    BufferStereo(float* bufL, float* bufR, uint32_t startIndex, uint32_t endIndex) 
+        : bufferL(bufL), bufferR(bufR), start(startIndex), end (endIndex), size(endIndex - startIndex) {}
     
     void setValue(uint32_t index, float left, float right) {
             bufferL[index] = left;
@@ -47,7 +55,7 @@ public:
 
 
     StereoPair getSample(uint32_t index) const{
-        return {getValueInterpolated(index)};
+        return {getValueInterpolated(toMainBufferIndex(index))};
     }
         
 

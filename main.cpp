@@ -25,7 +25,11 @@ volatile uint32_t sIndexRecordDebug = 0.0f;
 #define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
 float DSY_SDRAM_BSS BufferR[BUFFER_MAX];
 float DSY_SDRAM_BSS BufferL[BUFFER_MAX];
-BufferStereo Buffer(BufferL, BufferR);
+BufferStereo Buffer(BufferL, BufferR, 48000, 2 * 48000);
+
+int soundSeconds = 2;
+BufferStereo* soundBuffers[16];
+//BufferSubStereo pageBuffer;
 
 float sIndex; // index into buffer
 uint32_t sIndexInt;
@@ -36,6 +40,21 @@ float sFreq; // in Hz
 bool sGate, sGatePrev; //
 SampleSettings sampleSettings;
 bool record;
+
+enum millisecondDivisions : uint32_t{ // can be called without using millisecondDivisions.value. just value. Move scope into class or use 'enum class'
+	one = 1000,
+	two = 2000,
+	three = 3000,
+	max = 3500
+};
+
+void AllocateSubBuffers(millisecondDivisions division){
+	uint32_t start = 0;
+	for(int i=0; i<16; i++){
+		soundBuffers[i] = new BufferStereo(BufferL, BufferR, start * 48, (start + start) * 48);
+		start += division;
+	}
+} 
 
 // demo
 void fillBuffer()
@@ -104,7 +123,7 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 
 				if (sIndexRecord < (BUFFER_MAX - 1))
 				{
-					Buffer.setValue(sIndexRecord, sigL, sigR);
+					(*soundBuffers[0]).setValue(sIndexRecord, sigL, sigR);
 					sIndexRecord++;
 
 					sampleSettings.sPhaseLoopEnd = sIndexRecord;
@@ -122,8 +141,8 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 		else {	
 				if (sIndex < sampleSettings.sPhaseEnd)
 				{
-					sigL = Buffer.getSample(sIndex).left;
-					sigR = Buffer.getSample(sIndex).right;
+					sigL = (*soundBuffers[0]).getSample(sIndex).left;
+					sigR = (*soundBuffers[0]).getSample(sIndex).right;
 
 					sIndex += 1.0;
 					//sIndex += sFactor;
@@ -169,7 +188,8 @@ int main(void)
     Switch playButton;
     recButton.Init(hardware.GetPin(29), 1000);
     playButton.Init(hardware.GetPin(30), 1000);
-    
+	
+	AllocateSubBuffers(two);
 	System::Delay(100);
     // sampler - setup
 
