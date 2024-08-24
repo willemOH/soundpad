@@ -17,10 +17,24 @@ private:
         float left;
         float right;
     };
-/* 
+
+    StereoPair getValueInterpolated(float index) const{ 
+        int32_t indexInt = static_cast<int32_t>(index); //strips decimal
+        float indexFraction = index - indexInt; //gets decimal
+
+        StereoPair current = getValue(indexInt);
+        StereoPair next = getValue(indexInt + 1);
+
+        // Linear interpolation (value halfway between samples)
+        float sigL = current.left + (next.left - current.left) * indexFraction;
+        float sigR = current.right + (next.right - current.right) * indexFraction;
+
+        return {sigL, sigR}; 
+    }
+
     StereoPair getValue(uint32_t index) const { //const = readonly
             return {bufferL[index], bufferR[index]};
-    } */
+    } 
 
 public:
     BufferStereo(float* bufL, float* bufR) 
@@ -33,18 +47,7 @@ public:
 
 
     StereoPair getSample(uint32_t index) const{
-        int32_t indexInt = static_cast<int32_t>(index); //strips decimal
-        float indexFraction = index - indexInt; //gets decimal
-        // get sample 
-
-        float a = bufferL[indexInt];
-        float b = bufferL[indexInt + 1];
-        float sigL = a + (b - a) * indexFraction; //linear interpolation (get value halfway between samples)
-        a = bufferR[indexInt];
-        b = bufferR[indexInt + 1];
-        float sigR = a + (b - a) * indexFraction; 
-
-        return {sigL, sigR}; 
+        return {getValueInterpolated(index)};
     }
         
 
