@@ -1,10 +1,12 @@
 #include "daisy_seed.h"
 #include "main.h"
 #include "core_cm7.h" //measuring
+#include "bufferStereo.h"
 // Use the daisy namespace to prevent having to type
 // daisy:: before all libdaisy functions
 using namespace daisy;
 using namespace daisysp;
+
 
 //#define LOGG // start serial over USB Logger class
 //#define MEASURE // measure MCU utilization
@@ -24,8 +26,9 @@ volatile uint32_t sIndexRecordDebug = 0.0f;
 
 // sampler
 #define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
-float DSY_SDRAM_BSS sBufferR[BUFFER_MAX];
-float DSY_SDRAM_BSS sBufferL[BUFFER_MAX];
+float DSY_SDRAM_BSS BufferR[BUFFER_MAX];
+float DSY_SDRAM_BSS BufferL[BUFFER_MAX];
+BufferStereo Buffer(BufferL, BufferR);
 
 float sIndex; // index into buffer
 uint32_t sIndexInt;
@@ -50,11 +53,13 @@ void fillBuffer()
 
 	for (uint32_t i = 0; i < BUFFER_MAX; i++)
 	{
-		sBufferR[i] = osc.Process();
-		sBufferL[i] = sBufferR[i];	
+		float signal = osc.Process();
+		Buffer.setValue(i, signal, signal);
+		/* sBufferR[i] = osc.Process();
+		sBufferL[i] = sBufferR[i];	 */
 	}
 	// Print the size of sBufferL
-    size_t sizeOfsBufferL = sizeof(sBufferL) / sizeof(sBufferL[0]);
+    size_t sizeOfsBufferL = sizeof(BufferL) / sizeof(BufferL[0]);
  hardware.PrintLine("Size of sBufferL: %u", static_cast<unsigned int>(sizeOfsBufferL));
 
 }
@@ -116,8 +121,7 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 
 				if (sIndexRecord < (BUFFER_MAX - 1))
 				{
-					sBufferL[sIndexRecord] = sigR;
-					sBufferR[sIndexRecord] = sigL;
+					Buffer.setValue(sIndexRecord, sigL, sigR);
 					sIndexRecord++;
 
 					sampleSettings.sPhaseLoopEnd = sIndexRecord;
@@ -140,16 +144,8 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 
 				if (sIndex < sampleSettings.sPhaseEnd)
 				{
-					sIndexInt = static_cast<int32_t>(sIndex); //strips decimal
-					sIndexFraction = sIndex - sIndexInt;
-
-					// get sample
-					a = sBufferL[sIndexInt];
-					b = sBufferL[sIndexInt + 1];
-					sigL = a + (b - a) * sIndexFraction; //linear interpolation (get value halfway between samples)
-					a = sBufferR[sIndexInt];
-					b = sBufferR[sIndexInt + 1];
-					sigR = a + (b - a) * sIndexFraction;
+					sigL = Buffer.getSample(sIndex).left;
+					sigR = Buffer.getSample(sIndex).right;
 
 					sIndex += 1.0;
 					//sIndex += sFactor;
