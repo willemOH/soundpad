@@ -1,5 +1,5 @@
-#ifndef BUFFERSTEREO_H
-#define BUFFERSTEREO_H
+#ifndef STEREOBUFFERCHUNK_H
+#define STEREOBUFFERCHUNK_H
 
 #pragma once
 
@@ -8,7 +8,7 @@
 using namespace daisysp; 
 
 // cannot define buffers to SDRAM within an object: https://forum.electro-smith.com/t/possible-runtime-crash-trying-to-put-an-object-in-the-sdram/3389/4
-class BufferStereo {
+class StereoBufferChunk {
 private:
     float* bufferL;
     float* bufferR;
@@ -45,7 +45,7 @@ private:
     }
 
 public:
-    BufferStereo(float* bufL, float* bufR, uint32_t startIndex, uint32_t endIndex) 
+    StereoBufferChunk(float* bufL, float* bufR, uint32_t startIndex, uint32_t endIndex) 
         : bufferL(bufL), bufferR(bufR), start(startIndex), end (endIndex), size(endIndex - startIndex) {}
     
     void setValue(uint32_t index, float left, float right) {
@@ -61,4 +61,4 @@ public:
 
 };
 
-#endif // BUFFERSTEREO_H
+#endif // STEREOBUFFERCHUNK_H

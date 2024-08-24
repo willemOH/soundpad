@@ -1,7 +1,7 @@
 #include "daisy_seed.h"
 #include "main.h"
 #include "core_cm7.h" //measuring
-#include "bufferStereo.h"
+#include "stereo_buffer_chunk.h"
 // Use the daisy namespace to prevent having to type
 // daisy:: before all libdaisy functions
 using namespace daisy;
@@ -25,10 +25,10 @@ volatile uint32_t sIndexRecordDebug = 0.0f;
 #define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
 float DSY_SDRAM_BSS BufferR[BUFFER_MAX];
 float DSY_SDRAM_BSS BufferL[BUFFER_MAX];
-BufferStereo Buffer(BufferL, BufferR, 48000, 2 * 48000);
+StereoBufferChunk Buffer(BufferL, BufferR, 48000, 2 * 48000);
 
 int soundSeconds = 2;
-BufferStereo* soundBuffers[16];
+StereoBufferChunk* soundBuffers[16];
 //BufferSubStereo pageBuffer;
 
 float sIndex; // index into buffer
@@ -48,10 +48,10 @@ enum millisecondDivisions : uint32_t{ // can be called without using millisecond
 	max = 3500
 };
 
-void AllocateSubBuffers(millisecondDivisions division){
+void AllocateBufferChunks(millisecondDivisions division){
 	uint32_t start = 0;
 	for(int i=0; i<16; i++){
-		soundBuffers[i] = new BufferStereo(BufferL, BufferR, start * 48, (start + start) * 48);
+		soundBuffers[i] = new StereoBufferChunk(BufferL, BufferR, start * 48, (start + start) * 48);
 		start += division;
 	}
 } 
@@ -189,7 +189,7 @@ int main(void)
     recButton.Init(hardware.GetPin(29), 1000);
     playButton.Init(hardware.GetPin(30), 1000);
 	
-	AllocateSubBuffers(two);
+	AllocateBufferChunks(two);
 	System::Delay(100);
     // sampler - setup
 
