@@ -2,6 +2,7 @@
 #include "main.h"
 #include "core_cm7.h" //measuring
 #include "stereo_buffer_chunk.h"
+#include "sample.h"
 // Use the daisy namespace to prevent having to type
 // daisy:: before all libdaisy functions
 using namespace daisy;
@@ -29,16 +30,11 @@ StereoBufferChunk Buffer(BufferL, BufferR, 48000, 2 * 48000);
 
 int soundSeconds = 2;
 StereoBufferChunk* soundBuffers[16];
+
+Sample sample;
 //BufferSubStereo pageBuffer;
 
-float sIndex; // index into buffer
-uint32_t sIndexInt;
-float sIndexFraction;
-uint32_t sIndexRecord;
-float sFactor; // how much to advance index for a new sample
-float sFreq; // in Hz
-bool sGate, sGatePrev; //
-SampleSettings sampleSettings;
+
 bool record;
 
 enum millisecondDivisions : uint32_t{ // can be called without using millisecondDivisions.value. just value. Move scope into class or use 'enum class'
@@ -56,52 +52,15 @@ void AllocateBufferChunks(millisecondDivisions division){
 	}
 } 
 
-// demo
-void fillBuffer()
-{
-	Oscillator osc;
-
-    osc.Init(sysSampleRate);
-    osc.SetWaveform(osc.WAVE_TRI);
-	osc.SetFreq(440.0f);
-	osc.SetAmp(0.1f);
-
-	for (uint32_t i = 0; i < BUFFER_MAX; i++)
-	{
-		float signal = osc.Process();
-		Buffer.setValue(i, signal, signal);
-	}
-	// Print the size of sBufferL
-    size_t sizeOfsBufferL = sizeof(BufferL) / sizeof(BufferL[0]);
- hardware.PrintLine("Size of sBufferL: %u", static_cast<unsigned int>(sizeOfsBufferL));
-
-}
-
-void RecordPrepare(bool yes)
-{
-	if(yes){
-		sIndexRecord = 0;
-		sampleSettings.sPhaseStart = 0;
-		sampleSettings.sPhaseLoopStart = 0;
-	}
-}
-
-// Function to print sIndex value outside the AudioCallback
-void PrintDebugInfo()
-{
-    if (printFlag)
-    {
-        int loopstartdebugInt = static_cast<int>(loopstartdebug);
-       hardware.PrintLine("loopstart = %d", sampleSettings.sPhaseLoopStart);
-    	printFlag = false;
-    }
-}
 
 void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
                    AudioHandle::InterleavingOutputBuffer out,
                    size_t                                size)
-{
+{	
+	//float sigInR, sigInL, sigOutR, sigOutL = 0.0f;
 	float sigR, sigL = 0.0f;
+	//Playback(in*, out*, size); //soon to be a separate class from record
+	
     //float sigGate;
     
 	// measure MCU utilization
@@ -114,56 +73,12 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 
     for (size_t i = 0; i < size; i += 2)
     {
-		// record
-		if (record)
-		{
-			// input
-				sigL = in[i];
-				sigR = in[i + 1];			
-
-				if (sIndexRecord < (BUFFER_MAX - 1))
-				{
-					(*soundBuffers[0]).setValue(sIndexRecord, sigL, sigR);
-					sIndexRecord++;
-
-					sampleSettings.sPhaseLoopEnd = sIndexRecord;
-					sampleSettings.sPhaseEnd = sIndexRecord;
-					sampleSettings.sLength = sIndexRecord;
-
-					sIndexRecordDebug = sIndexRecord;
-					printFlag = true;
-				}
-			
-			// pass through
-			out[i] = sigR;
-			out[i + 1] = sigL;
-		} 
-		else {	
-				if (sIndex < sampleSettings.sPhaseEnd)
-				{
-					sigL = (*soundBuffers[0]).getSample(sIndex).left;
-					sigR = (*soundBuffers[0]).getSample(sIndex).right;
-
-					sIndex += 1.0;
-					//sIndex += sFactor;
-					if (sIndex >= sampleSettings.sPhaseLoopEnd)
-					{
-						sIndex = sampleSettings.sPhaseLoopStart;
-					}
-					out[i]  = sigL;
-		    		out[i + 1] = sigR;
-				#ifdef LOGG
-                printFlag = true;
-				#endif
-				}
-				else{
-					printFlag = true;
-					sIndex = 0;
-					sIndexDebug = sIndex;
-					//loopstartdebug = sampleSettings.sPhaseEnd;
-				}
-		}
-	
+		sigL = in[i];
+		sigR = in[i + 1];	
+		sample.Process(sigL, sigR, record);
+		out[i]  = sample.GetOutput().left;
+        out[i + 1] = sample.GetOutput().right;
+		
 	// measure MCU utilization
    	#ifdef MEASURE
 	// measure - stop
@@ -174,7 +89,7 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 	#endif
     }
 
-}
+} 
 
 int main(void)
 {
@@ -184,12 +99,16 @@ int main(void)
     sysSampleRate = hardware.AudioSampleRate();
 	sysCallbackRate = hardware.AudioCallbackRate();
     
+	
     Switch recButton;
     Switch playButton;
     recButton.Init(hardware.GetPin(29), 1000);
     playButton.Init(hardware.GetPin(30), 1000);
 	
+	
 	AllocateBufferChunks(two);
+	sample.Init(sysSampleRate, soundBuffers[0]);
+
 	System::Delay(100);
     // sampler - setup
 
@@ -199,17 +118,9 @@ int main(void)
 	hardware.PrintLine("monitoring started");
 	#endif
 	
-	fillBuffer();
-	sIndex = 0.0f;
-	sFreq = 440.0f;
-	sFactor = (sFreq / 440.0f);
 	//sGate = false;
 	//sGatePrev = false;
-	sampleSettings.sPhaseStart = 48000.0f * 0.0f;
-	sampleSettings.sPhaseLoopStart = 48000.0f * 0.0f;
-	sampleSettings.sPhaseLoopEnd = 48000.0f * 0.5f;
-	sampleSettings.sPhaseEnd = 48000.0f * 1.0f;
-	sampleSettings.sLength = sampleSettings.sPhaseEnd;
+	
 
 	record = false;
 	// start callback
@@ -224,7 +135,7 @@ int main(void)
 		#endif
         recButton.Debounce();
         hardware.SetLed(recButton.Pressed());
-		RecordPrepare(recButton.RisingEdge());
+		sample.RecordPrepare(recButton.RisingEdge());
         record = recButton.Pressed();
         System::Delay(1);
     }

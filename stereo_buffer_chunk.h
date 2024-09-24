@@ -1,6 +1,3 @@
-#ifndef STEREOBUFFERCHUNK_H
-#define STEREOBUFFERCHUNK_H
-
 #pragma once
 
 #include "daisysp.h"
@@ -60,5 +57,3 @@ public:
         
 
 };
-
-#endif // STEREOBUFFERCHUNK_H
