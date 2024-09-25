@@ -45,7 +45,7 @@ public:
     StereoBufferChunk(float* bufL, float* bufR, uint32_t startIndex, uint32_t endIndex) 
         : bufferL(bufL), bufferR(bufR), start(startIndex), end (endIndex), size(endIndex - startIndex) {}
     
-    void setValue(uint32_t index, float left, float right) {
+    void setValue(uint32_t index, float left, float right) { //currently does not limit setValue to start and end indexes
             bufferL[index] = left;
             bufferR[index] = right;
     }

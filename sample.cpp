@@ -56,10 +56,7 @@ void Sample::Playback(){
         #endif
         }
         else{
-            /* printFlag = true;
-            sIndex = 0;
-            sIndexDebug = sIndex; */
-            //loopstartdebug = settings.sPhaseEnd;
+			sIndex = 0;
         }
     
 }

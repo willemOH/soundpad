@@ -21,7 +21,6 @@ float sysCallbackRate;
 float DSY_SDRAM_BSS BufferR[BUFFER_MAX];
 float DSY_SDRAM_BSS BufferL[BUFFER_MAX];
 StereoBufferChunk Buffer(BufferL, BufferR, 48000, 2 * 48000);
-
 int soundSeconds = 2;
 StereoBufferChunk* soundBuffers[16];
 
@@ -35,13 +34,15 @@ SPUI uiInstance;
 enum millisecondDivisions : uint32_t{ // can be called without using millisecondDivisions.value. just value. Move scope into class or use 'enum class'
 	one = 1000,
 	two = 2000,
-	three = 3000,
+	three = 3000, //= 48 seconds so 12 seconds for loop section
 	max = 3500
 };
 
 void AllocateBufferChunks(millisecondDivisions division){
 	uint32_t start = 0;
-	for(int i=0; i<16; i++){
+	soundBuffers[0] = new StereoBufferChunk(BufferL, BufferR, 0, division * 48); // first chunk given start and end index of main buffer size
+	start += division;
+	for(int i=1; i<16; i++){
 		soundBuffers[i] = new StereoBufferChunk(BufferL, BufferR, start * 48, (start + start) * 48);
 		start += division;
 	}
@@ -119,19 +120,12 @@ int main(void)
     //update loop
     for(;;)
     { 
-		//hardware.PrintLine("float test: %f", 100.00f); 
 		#ifdef LOGG
 		//PrintDebugInfo();
 		#endif
 		controls.UpdateControlStates();
-		/* hardware.PrintLine("main.cpp - After UpdateControlStates");
-        hardware.PrintLine("main.cpp - once = %d, UI instance address: %p", uiInstance.once, static_cast<void*>(&uiInstance)); */
 		sample.RecordPrepare(uiInstance.recordStart);
 		record = uiInstance.record;
-        /* recButton.Debounce();
-        hardware.SetLed(recButton.Pressed());
-		sample.RecordPrepare(recButton.RisingEdge());
-        record = recButton.Pressed(); */
         System::Delay(1);
     }
 }

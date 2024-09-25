@@ -42,7 +42,6 @@ void Controls::UpdateControlStates() {
     #endif
     // Directly calls UI method with the pressed buttons list
     ui->Update(pressedButtons);
-    hardware.PrintLine("controls.cpp - once = %d, UI instance address: %p", ui->once, static_cast<void*>(ui));
 }
 
 void Controls::DebounceButtons(){
@@ -51,9 +50,3 @@ void Controls::DebounceButtons(){
     }
 }
 
-
-/* 
- controls.recButton.Debounce();
-        hardware.SetLed(controls.recButton.Pressed());
-		RecordPrepare(controls.recButton.RisingEdge());
-        record = controls.recButton.Pressed(); */
