@@ -2,7 +2,7 @@
 TARGET = soundpad
 
 # Sources
-CPP_SOURCES = main.cpp sample.cpp
+CPP_SOURCES = main.cpp sample.cpp sp_ui.cpp controls.cpp
 
 # Library Locations
 LIBDAISY_DIR = ./libDaisy

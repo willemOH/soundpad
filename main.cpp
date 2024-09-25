@@ -3,6 +3,8 @@
 #include "core_cm7.h" //measuring
 #include "stereo_buffer_chunk.h"
 #include "sample.h"
+#include "sp_ui.h"
+#include "controls.h"
 using namespace daisy;
 using namespace daisysp;
 
@@ -26,6 +28,9 @@ StereoBufferChunk* soundBuffers[16];
 Sample sample;
 
 bool record;
+
+Controls controls;
+SPUI uiInstance;
 
 enum millisecondDivisions : uint32_t{ // can be called without using millisecondDivisions.value. just value. Move scope into class or use 'enum class'
 	one = 1000,
@@ -84,11 +89,12 @@ int main(void)
     sysSampleRate = hardware.AudioSampleRate();
 	sysCallbackRate = hardware.AudioCallbackRate();
     
-	
-    Switch recButton;
+	controls.Init(&uiInstance);
+
+   /*  Switch recButton;
     Switch playButton;
     recButton.Init(hardware.GetPin(29), 1000);
-    playButton.Init(hardware.GetPin(30), 1000);
+    playButton.Init(hardware.GetPin(30), 1000); */
 	
 	
 	AllocateBufferChunks(two);
@@ -115,12 +121,17 @@ int main(void)
     { 
 		//hardware.PrintLine("float test: %f", 100.00f); 
 		#ifdef LOGG
-		PrintDebugInfo();
+		//PrintDebugInfo();
 		#endif
-        recButton.Debounce();
+		controls.UpdateControlStates();
+		/* hardware.PrintLine("main.cpp - After UpdateControlStates");
+        hardware.PrintLine("main.cpp - once = %d, UI instance address: %p", uiInstance.once, static_cast<void*>(&uiInstance)); */
+		sample.RecordPrepare(uiInstance.recordStart);
+		record = uiInstance.record;
+        /* recButton.Debounce();
         hardware.SetLed(recButton.Pressed());
 		sample.RecordPrepare(recButton.RisingEdge());
-        record = recButton.Pressed();
+        record = recButton.Pressed(); */
         System::Delay(1);
     }
 }
