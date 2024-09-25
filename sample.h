@@ -18,21 +18,13 @@ private:
 
     StereoBufferChunk* sBuffer;
 
-   
-
-
-    struct SampleSettings //this would be in a more global class for sampling
-{
-	// sample
-	// sssssssssssssssssssss
-	// start lstart lend end
-	// gate--<--------->
-	uint32_t sLength; // length of sample, < BUFFER_MAX
-	uint32_t sPhaseStart;
-	uint32_t sPhaseLoopStart;
-	uint32_t sPhaseLoopEnd;
-	uint32_t sPhaseEnd;
-};
+    struct SampleSettings{ //this would be in a more global class for sampling
+        uint32_t sLength; // length of sample, < BUFFER_MAX
+        uint32_t sPhaseStart;
+        uint32_t sPhaseLoopStart;
+        uint32_t sPhaseLoopEnd;
+        uint32_t sPhaseEnd;
+    };
 
     struct StereoPair{
         float left;
@@ -43,6 +35,7 @@ private:
 
     void Record(float sigL, float sigR); //record functionality will be in separate class
     void Playback();
+
 public:
     void Init(float sampleRate, StereoBufferChunk* soundBuffer);
     SampleSettings settings;
@@ -52,7 +45,4 @@ public:
     }; 
     void RecordPrepare(bool yes);
     void FillBuffer(float sampleRate);
-
-
-    // Add other member functions and variables here
 };

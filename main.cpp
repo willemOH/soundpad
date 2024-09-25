@@ -3,8 +3,6 @@
 #include "core_cm7.h" //measuring
 #include "stereo_buffer_chunk.h"
 #include "sample.h"
-// Use the daisy namespace to prevent having to type
-// daisy:: before all libdaisy functions
 using namespace daisy;
 using namespace daisysp;
 
@@ -16,12 +14,6 @@ DaisySeed hardware;
 float sysSampleRate;
 float sysCallbackRate;
 
-// Global variables for debugging
-volatile bool printFlag = false;
-volatile float sIndexDebug = 0.0f;
-volatile float loopstartdebug = 0.0f;
-volatile uint32_t sIndexRecordDebug = 0.0f;
-
 // sampler
 #define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
 float DSY_SDRAM_BSS BufferR[BUFFER_MAX];
@@ -32,8 +24,6 @@ int soundSeconds = 2;
 StereoBufferChunk* soundBuffers[16];
 
 Sample sample;
-//BufferSubStereo pageBuffer;
-
 
 bool record;
 
@@ -57,11 +47,7 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
                    AudioHandle::InterleavingOutputBuffer out,
                    size_t                                size)
 {	
-	//float sigInR, sigInL, sigOutR, sigOutL = 0.0f;
 	float sigR, sigL = 0.0f;
-	//Playback(in*, out*, size); //soon to be a separate class from record
-	
-    //float sigGate;
     
 	// measure MCU utilization
 	#ifdef MEASURE
@@ -70,7 +56,6 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 	#endif
 
 	// audio
-
     for (size_t i = 0; i < size; i += 2)
     {
 		sigL = in[i];
@@ -110,7 +95,6 @@ int main(void)
 	sample.Init(sysSampleRate, soundBuffers[0]);
 
 	System::Delay(100);
-    // sampler - setup
 
 	// logging over serial USB
 	#ifdef LOGG
