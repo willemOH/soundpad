@@ -14,7 +14,7 @@ void Sample::Init(float sampleRate, StereoBufferChunk* soundBuffer){
 	settings.sLength = settings.sPhaseEnd;
 }
 
-void Sample::Process(float sigL, float sigR, bool record) {
+void Sample::Process(float sigL, float sigR) {
 	if(record) {
 		Sample::Record(sigL, sigR);
 	} else { //in future want record and playback to be concurrent
@@ -61,12 +61,10 @@ void Sample::Playback(){
     
 }
 
-void Sample::RecordPrepare(bool yes){
-	if(yes){
+void Sample::RecordPrepare(){ 
 		sIndexRecord = 0;
 		settings.sPhaseStart = 0;
 		settings.sPhaseLoopStart = 0;
-	}
 }
 
 // demo
@@ -85,5 +83,9 @@ void Sample::FillBuffer(float sampleRate){
 	/* // Print the size of sBufferL
     size_t sizeOfsBufferL = sizeof(BufferL) / sizeof(BufferL[0]);
 	hardware.PrintLine("Size of sBufferL: %u", static_cast<unsigned int>(sizeOfsBufferL)); */
+}
+
+void Sample::SetRecord(bool recordState){
+	record = recordState;
 }
 

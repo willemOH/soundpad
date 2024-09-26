@@ -26,10 +26,8 @@ StereoBufferChunk* soundBuffers[16];
 
 Sample sample;
 
-bool record;
-
 Controls controls;
-SPUI uiInstance;
+SPUI ui;
 
 enum millisecondDivisions : uint32_t{ // can be called without using millisecondDivisions.value. just value. Move scope into class or use 'enum class'
 	one = 1000,
@@ -66,7 +64,7 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
     {
 		sigL = in[i];
 		sigR = in[i + 1];	
-		sample.Process(sigL, sigR, record);
+		sample.Process(sigL, sigR);
 		out[i]  = sample.GetOutput().left;
         out[i + 1] = sample.GetOutput().right;
 		
@@ -89,17 +87,11 @@ int main(void)
     
     sysSampleRate = hardware.AudioSampleRate();
 	sysCallbackRate = hardware.AudioCallbackRate();
-    
-	controls.Init(&uiInstance);
-
-   /*  Switch recButton;
-    Switch playButton;
-    recButton.Init(hardware.GetPin(29), 1000);
-    playButton.Init(hardware.GetPin(30), 1000); */
-	
 	
 	AllocateBufferChunks(two);
 	sample.Init(sysSampleRate, soundBuffers[0]);
+	ui.Init(&sample);
+	controls.Init(&ui);
 
 	System::Delay(100);
 
@@ -112,8 +104,6 @@ int main(void)
 	//sGate = false;
 	//sGatePrev = false;
 	
-
-	record = false;
 	// start callback
     hardware.StartAudio(AudioCallback);
 
@@ -124,8 +114,6 @@ int main(void)
 		//PrintDebugInfo();
 		#endif
 		controls.UpdateControlStates();
-		sample.RecordPrepare(uiInstance.recordStart);
-		record = uiInstance.record;
         System::Delay(1);
     }
 }

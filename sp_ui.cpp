@@ -1,20 +1,19 @@
 #include "sp_ui.h"
 //#include "globals.h" // Include globals.h to access hardware
 
+void SPUI::Init(ISample* sampleInstance) {
+    sample = sampleInstance;
+}
+
 void SPUI::Update(std::vector<Buttons>& pressedButtons) {
     if (!pressedButtons.empty()) {
         switch (pressedButtons[0]) {
             case Buttons::BUTTON1: //record
                 if(once){
-                    recordStart = true;
-                    //hardware.PrintLine("recordStart = true");
-                }
-                else{
-                    recordStart = false;
-                    //hardware.PrintLine("recordStart = false");
+                    sample->RecordPrepare();
                 }
                 play = false;
-                record = true;
+                sample->SetRecord(true);
                 once = false;
                 break;//early exit otherwise use flags to activate functionality
             case Buttons::BUTTON2:
@@ -26,7 +25,7 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons) {
         }
     }
     else{
-        record=false;
+        sample->SetRecord(false);
         once = true;
     }
     second_button:
