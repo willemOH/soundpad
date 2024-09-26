@@ -1,16 +1,6 @@
 #include "sp_ui.h"
 //#include "globals.h" // Include globals.h to access hardware
 
-/* SPUI::SPUI(std::array<Observer*, MAX_OBSERVERS> observers)
-    : observers_(observers) {}
- */
-void SPUI::NotifyObservers() {
-    for (Observer* observer : observers_) {
-        if (observer) {
-            observer->Update();
-        }
-    }
-}
 void SPUI::Update(std::vector<Buttons>& pressedButtons) {
     if (!pressedButtons.empty()) {
         switch (pressedButtons[0]) {

@@ -1,6 +1,5 @@
 #ifndef CONTROLS_H
 #define CONTROLS_H
-#define LOGG
 #include "daisy_seed.h"
 #include "sp_ui.h" // Include the UI header directly
 #include <vector>
