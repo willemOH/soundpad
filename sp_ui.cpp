@@ -12,14 +12,10 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons) {
                 if(once){
                     sample->RecordPrepare();
                 }
-                //play = false;
-                sample->SetRecord(true);
-                //sample->Record();
+                sample->SetRecord(true);;
                 once = false;
                 break;//early exit otherwise use flags to activate functionality
             case Buttons::BUTTON2: //play
-                //play=!play;
-                //sample->Playback();
                 sample->SetPlayback(true);
                 goto second_button;
             default:
@@ -43,5 +39,4 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons) {
                     break;
             }
         }
-    //hardware.PrintLine("recordStart = %s", recordStart ? "true" : "false");
 }

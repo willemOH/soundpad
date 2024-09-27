@@ -67,12 +67,7 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
     {
 		sigL = in[i];
 		sigR = in[i + 1];
-		if(sample.record){
-			sample.Record();
-		}
-		if(sample.playback){
-			sample.Playback();
-		}
+		sample.Process();
 		out[i]  = sample.GetOutput().left;
         out[i + 1] = sample.GetOutput().right;
 		
@@ -103,7 +98,6 @@ int main(void)
 	controls.Init(&ui);
 
 	System::Delay(100);
-	hardware.StartLog(true);
 	// logging over serial USB
 	#ifdef LOGG
 	hardware.StartLog(true); // start log but don't wait for PC - we can be connected to a battery

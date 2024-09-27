@@ -18,6 +18,12 @@ void Sample::Init(float sampleRate, StereoBufferChunk* soundBuffer){
 }
 
 void Sample::Process() {
+	if(record){
+			Record();
+		}
+		if(playback){
+			Playback();
+		}
 }
 
 void Sample::Record(){
