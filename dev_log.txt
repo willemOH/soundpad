@@ -1,0 +1,22 @@
+9/26/24
+
+Problem: data copying and pointer passing makes sound extremely low fidelity. direct passing is fine but then record is called from main.cpp in audiocallback and I would like it to be encapsulated within the sample engine which ui calls on.
+
+ok this is a little confusing. I took measurements of passing through the parameters of sample.Process() here in main.cpp in three ways: directly, copying data, and passing pointers. These are my results:
+
+Direct passing: Start time: 3480103260486.71 ms End time: 
+536999849778.18 ms 
+
+Time taken to store sample: -2668382779217.11 ms
+
+data copying: Time taken to store sample: 274718973264.31 ms
+
+reference passing: Time taken to store sample: 394460791557.61 ms (this one was done the best and yet seems to be the longest)
+
+pointer passing: Time taken to store sample: -5368642666550.88 ms (this one was not done well I think as it updated the reference in audio rate)
+
+I would have though pointer passing to have taken less time than data passing but looking at these relative values (however incorrect the measurement is), it seems that is no the case
+
+Conclusion: Because there is at least significant differences in relative time, data copying and even pointer passing is too slow for recording incoming data into buffer. Therefore, for now, I must pass the data directly, even if encapsulation suffers.
+
+ACTUAL Conclusion: Because record() and playback() were not called from the audio callback function, recording to and playing back from buffer were misaligned with the incoming signal rate. So it was not that it was taking too long but now I have a very efficient method of referencing the incoming data at least.
