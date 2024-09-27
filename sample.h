@@ -53,10 +53,13 @@ public:
     }; 
     bool record;
     bool playback;
+    bool loop;
     void RecordPrepare() override;
+    void PlayPrepare() override;
     void FillBuffer(float sampleRate);
     void SetRecord(bool recordState) override;
     void SetPlayback(bool playState) override;
+    void SetLoop(bool loopState) override;
     void Record() override; //record functionality will be in separate class
     void Playback() override;
 

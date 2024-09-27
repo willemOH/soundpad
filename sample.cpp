@@ -21,9 +21,14 @@ void Sample::Process() {
 	if(record){
 			Record();
 		}
-		if(playback){
-			Playback();
-		}
+	if(playback){
+		Playback();
+	}
+	else{
+		// pass through
+	Sample::output.right = inputRef.right;
+	Sample::output.left = inputRef.left;
+	}
 }
 
 void Sample::Record(){
@@ -36,9 +41,6 @@ void Sample::Record(){
 		settings.sPhaseEnd = sIndexRecord;
 		settings.sLength = sIndexRecord;
 	}
-	// pass through
-	Sample::output.right = inputRef.right;
-	Sample::output.left = inputRef.left;
 }
 
 void Sample::Playback(){
@@ -46,29 +48,36 @@ void Sample::Playback(){
         {
             float sigL = sBuffer->getSample(sIndex).left;
             float sigR = sBuffer->getSample(sIndex).right;
-
             sIndex += 1.0;
             //sIndex += sFactor;
-            if (sIndex >= settings.sPhaseLoopEnd)
-            {
-                sIndex = settings.sPhaseLoopStart;
-            }
-            
+			/* if (loop){
+				if (sIndex >= settings.sPhaseLoopEnd)
+				{
+					sIndex = settings.sPhaseLoopStart;
+				}
+			}; */
             Sample::output.left=sigL, output.right=sigR;
         #ifdef LOGG
         printFlag = true;
         #endif
         }
         else{
+			if (loop){
 			sIndex = 0;
+			}
         }
     
 }
 
 void Sample::RecordPrepare(){ 
-		sIndexRecord = 0;
-		settings.sPhaseStart = 0;
-		settings.sPhaseLoopStart = 0;
+	sIndexRecord = 0;
+	settings.sPhaseStart = 0;
+	settings.sPhaseLoopStart = 0;
+}
+
+
+void Sample::PlayPrepare(){
+	sIndex = 0;
 }
 
 // demo
@@ -95,5 +104,11 @@ void Sample::SetRecord(bool recordState){
 
 void Sample::SetPlayback(bool playState){
 	playback = playState;
+	hardware.PrintLine("loop= %d", loop);
+}
+
+void Sample::SetLoop(bool loopState){
+	loop = loopState;
+	hardware.PrintLine("loop= %d", loop);
 }
 

@@ -5,8 +5,10 @@
 class ISample {
 public:
     virtual void RecordPrepare();
+    virtual void PlayPrepare();
     virtual void SetRecord(bool recordState);
     virtual void SetPlayback(bool playState);
+    virtual void SetLoop(bool loopState);
     virtual void Record();
     virtual void Playback();
 };

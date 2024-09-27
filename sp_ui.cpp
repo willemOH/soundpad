@@ -1,5 +1,5 @@
 #include "sp_ui.h"
-//#include "globals.h" // Include globals.h to access hardware
+#include "global.h" // Include globals.h to access hardware
 
 void SPUI::Init(ISample* sampleInstance) {
     sample = sampleInstance;
@@ -11,11 +11,16 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons) {
             case Buttons::BUTTON1: //record
                 if(once){
                     sample->RecordPrepare();
+                    once = false;
                 }
                 sample->SetRecord(true);;
-                once = false;
+                
                 break;//early exit otherwise use flags to activate functionality
             case Buttons::BUTTON2: //play
+                if(once){
+                    sample->PlayPrepare();
+                    once = false;
+                }
                 sample->SetPlayback(true);
                 goto second_button;
             default:
@@ -31,8 +36,9 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons) {
     second_button:
         if (pressedButtons.size() > 1) {
             switch (pressedButtons[1]) {
-                case Buttons::BUTTON2: 
-                    loop=!loop;
+                case Buttons::BUTTON1: 
+                    hardware.PrintLine("setloop reached");
+                    sample->SetLoop(true); 
                     break;
                 default:
                     // Handle unexpected values for the second element

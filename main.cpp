@@ -9,7 +9,7 @@
 using namespace daisy;
 using namespace daisysp;
 
-//#define LOGG // start serial over USB Logger class
+#define LOGG // start serial over USB Logger class
 //#define MEASURE // measure MCU utilization
 
 DaisySeed hardware;
