@@ -5,6 +5,7 @@
 #include "sample.h"
 #include "sp_ui.h"
 #include "controls.h"
+#include "global.h"
 using namespace daisy;
 using namespace daisysp;
 
@@ -24,10 +25,14 @@ StereoBufferChunk Buffer(BufferL, BufferR, 48000, 2 * 48000);
 int soundSeconds = 2;
 StereoBufferChunk* soundBuffers[16];
 
-Sample sample;
+float sigR = 0.0f;
+float sigL = 0.0f;
+Sample sample(sigL, sigR);
 
 Controls controls;
 SPUI ui;
+
+
 
 enum millisecondDivisions : uint32_t{ // can be called without using millisecondDivisions.value. just value. Move scope into class or use 'enum class'
 	one = 1000,
@@ -51,8 +56,6 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
                    AudioHandle::InterleavingOutputBuffer out,
                    size_t                                size)
 {	
-	float sigR, sigL = 0.0f;
-    
 	// measure MCU utilization
 	#ifdef MEASURE
 	// measure - start
@@ -63,8 +66,13 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
     for (size_t i = 0; i < size; i += 2)
     {
 		sigL = in[i];
-		sigR = in[i + 1];	
-		sample.Process(sigL, sigR);
+		sigR = in[i + 1];
+		if(sample.record){
+			sample.Record();
+		}
+		if(sample.playback){
+			sample.Playback();
+		}
 		out[i]  = sample.GetOutput().left;
         out[i + 1] = sample.GetOutput().right;
 		
@@ -82,6 +90,7 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 
 int main(void)
 {
+	
     hardware.Configure();
     hardware.Init();
     
@@ -94,7 +103,7 @@ int main(void)
 	controls.Init(&ui);
 
 	System::Delay(100);
-
+	hardware.StartLog(true);
 	// logging over serial USB
 	#ifdef LOGG
 	hardware.StartLog(true); // start log but don't wait for PC - we can be connected to a battery

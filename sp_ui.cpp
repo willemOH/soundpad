@@ -12,12 +12,15 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons) {
                 if(once){
                     sample->RecordPrepare();
                 }
-                play = false;
+                //play = false;
                 sample->SetRecord(true);
+                //sample->Record();
                 once = false;
                 break;//early exit otherwise use flags to activate functionality
-            case Buttons::BUTTON2:
-                play=!play;
+            case Buttons::BUTTON2: //play
+                //play=!play;
+                //sample->Playback();
+                sample->SetPlayback(true);
                 goto second_button;
             default:
                 // Handle unexpected values for the first element
@@ -26,6 +29,7 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons) {
     }
     else{
         sample->SetRecord(false);
+        sample->SetPlayback(false);
         once = true;
     }
     second_button:

@@ -1,4 +1,7 @@
 #include "sample.h"
+#include "global.h"
+
+Sample::Sample(float& left, float& right) : inputRef(left, right) {} //references must be intialized upon construction
 
 void Sample::Init(float sampleRate, StereoBufferChunk* soundBuffer){
     sBuffer = soundBuffer;
@@ -14,18 +17,13 @@ void Sample::Init(float sampleRate, StereoBufferChunk* soundBuffer){
 	settings.sLength = settings.sPhaseEnd;
 }
 
-void Sample::Process(float sigL, float sigR) {
-	if(record) {
-		Sample::Record(sigL, sigR);
-	} else { //in future want record and playback to be concurrent
-		Sample::Playback(); 
-	}
+void Sample::Process() {
 }
 
-void Sample::Record(float sigL, float sigR){
+void Sample::Record(){
 	if (sIndexRecord < (BUFFER_MAX - 1))
 	{
-		sBuffer->setValue(sIndexRecord, sigL, sigR);
+		sBuffer->setValue(sIndexRecord, inputRef.left, inputRef.right);
 		sIndexRecord++;
 
 		settings.sPhaseLoopEnd = sIndexRecord;
@@ -33,8 +31,8 @@ void Sample::Record(float sigL, float sigR){
 		settings.sLength = sIndexRecord;
 	}
 	// pass through
-	Sample::output.right = sigR;
-	Sample::output.left = sigL;
+	Sample::output.right = inputRef.right;
+	Sample::output.left = inputRef.left;
 }
 
 void Sample::Playback(){
@@ -87,5 +85,9 @@ void Sample::FillBuffer(float sampleRate){
 
 void Sample::SetRecord(bool recordState){
 	record = recordState;
+}
+
+void Sample::SetPlayback(bool playState){
+	playback = playState;
 }
 

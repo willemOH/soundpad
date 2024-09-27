@@ -6,6 +6,9 @@ class ISample {
 public:
     virtual void RecordPrepare();
     virtual void SetRecord(bool recordState);
+    virtual void SetPlayback(bool playState);
+    virtual void Record();
+    virtual void Playback();
 };
 
 #endif // I_SAMPLE_H

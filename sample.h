@@ -16,7 +16,6 @@ private:
     float sFactor; // how much to advance index for a new sample
     float sFreq; // in Hz
     bool sGate, sGatePrev; //
-    bool record;
 
     StereoBufferChunk* sBuffer;
 
@@ -33,21 +32,33 @@ private:
         float right;
     };
 
+    struct StereoPairRef{
+        float& left;
+        float& right;
+        StereoPairRef(float& l, float& r) : left(l), right(r) {}
+    };
+
+    StereoPairRef inputRef;
     StereoPair output;
 
-    void Record(float sigL, float sigR); //record functionality will be in separate class
-    void Playback();
+    
 
 public:
+    Sample(float& left, float& right); 
     void Init(float sampleRate, StereoBufferChunk* soundBuffer);
     SampleSettings settings;
-    void Process(float sigL, float sigR);
+    void Process();
     StereoPair GetOutput(){
         return(output);
     }; 
+    bool record;
+    bool playback;
     void RecordPrepare() override;
     void FillBuffer(float sampleRate);
     void SetRecord(bool recordState) override;
+    void SetPlayback(bool playState) override;
+    void Record() override; //record functionality will be in separate class
+    void Playback() override;
 
     
 };
