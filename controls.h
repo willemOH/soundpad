@@ -17,6 +17,13 @@ private:
     //Buttons pressedButton[2];
     DaisySeed hardware;
     Switch button[2];
+    AdcChannelConfig adcConfig[2]; //pots
+    //pot update parameters
+    float pot1old = 0.0f;
+    float pot2old = 0.0f;
+    float threshold = 0.01f; 
+	
+    bool potTrigs[4] = {false, false, false, false};
     SPUI* ui; // Store a pointer to the UI class
 };
 

@@ -17,7 +17,7 @@ class SPUI { //libDaisy already has a UI class - unnecessary UI display function
 public:
 
     void Init(ISample* sampleInstance);
-    void Update(std::vector<Buttons>& pressedButtons);
+    void Update(std::vector<Buttons>& pressedButtons, float& slider1, float& slider2);
     bool once = true;
     bool record = false;
     bool play = false;

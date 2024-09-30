@@ -11,6 +11,8 @@ public:
     virtual void SetLoop(bool loopState);
     virtual void Record();
     virtual void Playback();
+    virtual void SetStart(float fraction);
+    virtual void SetEnd(float fraction);
 };
 
 #endif // I_SAMPLE_H

@@ -63,7 +63,7 @@ void Sample::Playback(){
         }
         else{
 			if (loop){
-			sIndex = 0;
+			sIndex = settings.sPhaseStart;
 			}
         }
     
@@ -75,9 +75,16 @@ void Sample::RecordPrepare(){
 	settings.sPhaseLoopStart = 0;
 }
 
+void Sample::SetStart(float fraction){
+	settings.sPhaseStart = static_cast<uint32_t>(settings.sLength * fraction);
+}
+
+void Sample::SetEnd(float fraction){
+	settings.sPhaseEnd = static_cast<uint32_t>(settings.sLength * fraction);
+}
 
 void Sample::PlayPrepare(){
-	sIndex = 0;
+	sIndex = settings.sPhaseStart;
 }
 
 // demo

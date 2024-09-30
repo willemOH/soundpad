@@ -62,6 +62,8 @@ public:
     void SetLoop(bool loopState) override;
     void Record() override; //record functionality will be in separate class
     void Playback() override;
+    void SetStart(float fraction);
+    void SetEnd(float fraction);
 
     
 };

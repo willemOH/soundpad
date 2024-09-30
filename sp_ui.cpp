@@ -5,7 +5,7 @@ void SPUI::Init(ISample* sampleInstance) {
     sample = sampleInstance;
 }
 
-void SPUI::Update(std::vector<Buttons>& pressedButtons) {
+void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& slider2) {
     if (!pressedButtons.empty()) {
         switch (pressedButtons[0]) {
             case Buttons::BUTTON1: //record
@@ -45,4 +45,8 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons) {
                     break;
             }
         }
+
+    //sliders
+    sample->SetStart(slider1); //controls will send a lot of triggers for whenever pot moves. when triggered is false for more time than it takes to reset when sliding reasonably fast, preview = true
+    sample->SetEnd(slider2);
 }
