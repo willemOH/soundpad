@@ -5,7 +5,7 @@ void SPUI::Init(ISample* sampleInstance) {
     sample = sampleInstance;
 }
 
-void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& slider2) {
+void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& slider2, float& slider3, float& slide4) {
     if (!pressedButtons.empty()) {
         switch (pressedButtons[0]) {
             case Buttons::BUTTON1: //record

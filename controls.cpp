@@ -60,7 +60,7 @@ void Controls::UpdateControlStates() {
     }
     #endif
     // Directly calls UI method with the pressed buttons list
-    ui->Update(pressedButtons, pot1, pot2);
+    ui->Update(pressedButtons, pot1, pot2, pot3, pot4);
 }
 
 void Controls::DebounceButtons(){

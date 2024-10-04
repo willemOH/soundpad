@@ -9,22 +9,22 @@ using namespace daisy;
 
 class Sample : public ISample{
 private:
-    float sIndex; // index into buffer
-    uint32_t sIndexInt;
-    float sIndexFraction;
-    uint32_t sIndexRecord;
-    float sFactor; // how much to advance index for a new sample
-    float sFreq; // in Hz
-    bool sGate, sGatePrev; //
+    float index; // index into buffer
+    uint32_t indexInt;
+    float indexFraction;
+    uint32_t indexRecord;
+    float factor; // how much to advance index for a new sample
+    float freq; // in Hz
+    bool gate, gatePrev; //
 
     StereoBufferChunk* sBuffer;
 
     struct SampleSettings{ //this would be in a more global class for sampling
-        uint32_t sLength; // length of sample, < BUFFER_MAX
-        uint32_t sPhaseStart;
-        uint32_t sPhaseLoopStart;
-        uint32_t sPhaseLoopEnd;
-        uint32_t sPhaseEnd;
+        uint32_t length; // length of sample, < BUFFER_MAX
+        uint32_t start;
+        uint32_t loopStart;
+        uint32_t loopEnd;
+        uint32_t end;
     };
 
     struct StereoPair{
@@ -40,7 +40,8 @@ private:
 
     StereoPairRef inputRef;
     StereoPair output;
-
+    void Record() override; //record functionality will be in separate class
+    void Playback() override;
     
 
 public:
@@ -60,8 +61,6 @@ public:
     void SetRecord(bool recordState) override;
     void SetPlayback(bool playState) override;
     void SetLoop(bool loopState) override;
-    void Record() override; //record functionality will be in separate class
-    void Playback() override;
     void SetStart(float fraction);
     void SetEnd(float fraction);
 

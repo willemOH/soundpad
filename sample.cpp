@@ -7,14 +7,14 @@ void Sample::Init(float sampleRate, StereoBufferChunk* soundBuffer){
     sBuffer = soundBuffer;
     FillBuffer(sampleRate);
 
-	sIndex = 0.0f;
-	sFreq = 440.0f;
-	sFactor = (sFreq / 440.0f);
-    settings.sPhaseStart = 48000.0f * 0.0f;
-	settings.sPhaseLoopStart = 48000.0f * 0.0f;
-	settings.sPhaseLoopEnd = 48000.0f * 0.5f;
-	settings.sPhaseEnd = 48000.0f * 1.0f;
-	settings.sLength = settings.sPhaseEnd;
+	index = 0.0f;
+	freq = 440.0f;
+	factor = (freq / 440.0f);
+    settings.start = 48000.0f * 0.0f;
+	settings.loopStart = 48000.0f * 0.0f;
+	settings.loopEnd = 48000.0f * 0.5f;
+	settings.end = 48000.0f * 1.0f;
+	settings.length = settings.end;
 }
 
 void Sample::Process() {
@@ -32,28 +32,28 @@ void Sample::Process() {
 }
 
 void Sample::Record(){
-	if (sIndexRecord < (BUFFER_MAX - 1))
+	if (indexRecord < (BUFFER_MAX - 1))
 	{
-		sBuffer->setValue(sIndexRecord, inputRef.left, inputRef.right);
-		sIndexRecord++;
+		sBuffer->setValue(indexRecord, inputRef.left, inputRef.right);
+		indexRecord++;
 
-		settings.sPhaseLoopEnd = sIndexRecord;
-		settings.sPhaseEnd = sIndexRecord;
-		settings.sLength = sIndexRecord;
+		settings.loopEnd = indexRecord;
+		settings.end = indexRecord;
+		settings.length = indexRecord;
 	}
 }
 
 void Sample::Playback(){
-    if (sIndex < settings.sPhaseEnd)
+    if (index < settings.end)
         {
-            float sigL = sBuffer->getSample(sIndex).left;
-            float sigR = sBuffer->getSample(sIndex).right;
-            sIndex += 1.0;
-            //sIndex += sFactor;
+            float sigL = sBuffer->getSample(index).left;
+            float sigR = sBuffer->getSample(index).right;
+            index += 1.0;
+            //index += factor;
 			/* if (loop){
-				if (sIndex >= settings.sPhaseLoopEnd)
+				if (index >= settings.loopEnd)
 				{
-					sIndex = settings.sPhaseLoopStart;
+					index = settings.loopStart;
 				}
 			}; */
             Sample::output.left=sigL, output.right=sigR;
@@ -63,28 +63,28 @@ void Sample::Playback(){
         }
         else{
 			if (loop){
-			sIndex = settings.sPhaseStart;
+			index = settings.start;
 			}
         }
     
 }
 
 void Sample::RecordPrepare(){ 
-	sIndexRecord = 0;
-	settings.sPhaseStart = 0;
-	settings.sPhaseLoopStart = 0;
+	indexRecord = 0;
+	settings.start = 0;
+	settings.loopStart = 0;
 }
 
 void Sample::SetStart(float fraction){
-	settings.sPhaseStart = static_cast<uint32_t>(settings.sLength * fraction);
+	settings.start = static_cast<uint32_t>(settings.length * fraction);
 }
 
 void Sample::SetEnd(float fraction){
-	settings.sPhaseEnd = static_cast<uint32_t>(settings.sLength * fraction);
+	settings.end = static_cast<uint32_t>(settings.length * fraction);
 }
 
 void Sample::PlayPrepare(){
-	sIndex = settings.sPhaseStart;
+	index = settings.start;
 }
 
 // demo
