@@ -2086,44 +2086,6 @@
 			)
 		)
 	)
-	(sheet
-		(at 0 227.33)
-		(size 287.02 182.88)
-		(fields_autoplaced yes)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(fill
-			(color 0 0 0 0.0000)
-		)
-		(uuid "46e63e7d-a10d-4bce-9b9b-cc9a5a88265f")
-		(property "Sheetname" "component_testing"
-			(at 0 226.6184 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Sheetfile" "untitled.kicad_sch"
-			(at 0 410.7946 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left top)
-			)
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7"
-					(page "2")
-				)
-			)
-		)
-	)
 	(sheet_instances
 		(path "/"
 			(page "1")

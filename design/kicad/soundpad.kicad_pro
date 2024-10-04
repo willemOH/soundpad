@@ -578,6 +578,10 @@
     [
       "e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7",
       "Root"
+    ],
+    [
+      "46e63e7d-a10d-4bce-9b9b-cc9a5a88265f",
+      "component_testing"
     ]
   ],
   "text_variables": {}
