@@ -24,6 +24,7 @@ public:
     bool loop = false;
 
 private:
+    bool input = false;
     ISample* sample;
 };
 

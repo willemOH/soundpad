@@ -61,12 +61,12 @@ void Sample::Playback(){
         printFlag = true;
         #endif
         }
-        else{
-			if (loop){
+        else if(loop){
 			index = settings.start;
-			}
         }
-    
+		else{
+			Sample::SetPlayback(false);
+		}
 }
 
 void Sample::RecordPrepare(){ 
