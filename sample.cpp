@@ -39,11 +39,11 @@ void Sample::Record(){
 	{
 		sBuffer->setValue(indexRecord, inputRef.left, inputRef.right);
 		indexRecord++;
-
-		settings.loopEnd = indexRecord;
-		end = indexRecord;
-		settings.length = indexRecord;
 	}
+	settings.loopEnd = indexRecord;
+	settings.endSaved = indexRecord;
+	end = settings.endSaved;
+	settings.length = indexRecord;
 }
 
 void Sample::Playback(){
@@ -75,7 +75,9 @@ void Sample::Playback(){
 void Sample::RecordPrepare(){ 
 	indexRecord = 0;
 	start = 0;
+	settings.startSaved = start;
 	settings.loopStart = 0;
+
 }
 
 void Sample::SetStart(float fraction){
