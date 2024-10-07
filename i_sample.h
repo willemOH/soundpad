@@ -13,6 +13,7 @@ public:
     virtual void Playback();
     virtual void SetStart(float fraction);
     virtual void SetEnd(float fraction);
+    virtual bool GetLoopState();
 };
 
 #endif // I_SAMPLE_H

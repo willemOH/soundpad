@@ -50,12 +50,10 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& s
         }
 
     //sliders
-    if(sliderTrigs[0]){
+    if(sliderTrigs[0] || sample->GetLoopState()){
     sample->SetStart(slider1); //controls will send a lot of triggers for whenever pot moves. when triggered is false for more time than it takes to reset when sliding reasonably fast, preview = true
-    sample->SetPlayback(true); 
     } 
-    if(sliderTrigs[1]){
+    if(sliderTrigs[1] || sample->GetLoopState()){
     sample->SetEnd(slider2);
-    sample->SetPlayback(true); 
     }
 }

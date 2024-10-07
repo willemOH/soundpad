@@ -86,6 +86,7 @@ void Sample::SetStart(float fraction){
 	if(!loop){
 	index = start;
 	end = start + previewTime;
+	SetPlayback(true);
 	}
 }
 
@@ -95,6 +96,7 @@ void Sample::SetEnd(float fraction){
 	if(!loop){
 	start = end - previewTime;
 	index = start;
+	SetPlayback(true);
 	}
 }
 
@@ -132,5 +134,9 @@ void Sample::SetPlayback(bool playState){
 
 void Sample::SetLoop(bool loopState){
 	loop = loopState;
+}
+
+bool Sample::GetLoopState(){
+	return loop;
 }
 

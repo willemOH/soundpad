@@ -67,6 +67,7 @@ public:
     void SetLoop(bool loopState) override;
     void SetStart(float fraction);
     void SetEnd(float fraction);
+    bool GetLoopState();
 
     
 };
