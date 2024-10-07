@@ -3,6 +3,8 @@
 
 Sample::Sample(float& left, float& right) : inputRef(left, right) {} //references must be intialized upon construction
 
+uint32_t Sample::previewTime = 0.1 * 48000; //in seconds times samples
+
 void Sample::Init(float sampleRate, StereoBufferChunk* soundBuffer){
     sBuffer = soundBuffer;
     FillBuffer(sampleRate);
@@ -10,16 +12,17 @@ void Sample::Init(float sampleRate, StereoBufferChunk* soundBuffer){
 	index = 0.0f;
 	freq = 440.0f;
 	factor = (freq / 440.0f);
-    settings.start = 48000.0f * 0.0f;
+    start = 48000.0f * 0.0f;
 	settings.loopStart = 48000.0f * 0.0f;
 	settings.loopEnd = 48000.0f * 0.5f;
-	settings.end = 48000.0f * 1.0f;
-	settings.length = settings.end;
+	end = 48000.0f * 1.0f;
+	settings.length = end;
 }
+
 
 void Sample::Process() {
 	if(record){
-			Record();
+		Record();
 		}
 	if(playback){
 		Playback();
@@ -38,13 +41,13 @@ void Sample::Record(){
 		indexRecord++;
 
 		settings.loopEnd = indexRecord;
-		settings.end = indexRecord;
+		end = indexRecord;
 		settings.length = indexRecord;
 	}
 }
 
 void Sample::Playback(){
-    if (index < settings.end)
+    if (index < end)
         {
             float sigL = sBuffer->getSample(index).left;
             float sigR = sBuffer->getSample(index).right;
@@ -62,29 +65,41 @@ void Sample::Playback(){
         #endif
         }
         else if(loop){
-			index = settings.start;
+			index = start;
         }
-		else{
+		else{ //making this else if(!loop) caused weird play button holding glitches
 			Sample::SetPlayback(false);
 		}
 }
 
 void Sample::RecordPrepare(){ 
 	indexRecord = 0;
-	settings.start = 0;
+	start = 0;
 	settings.loopStart = 0;
 }
 
 void Sample::SetStart(float fraction){
-	settings.start = static_cast<uint32_t>(settings.length * fraction);
+	start = static_cast<uint32_t>(settings.length * fraction);
+	settings.startSaved = start;
+	if(!loop){
+	index = start;
+	end = start + previewTime;
+	}
 }
 
 void Sample::SetEnd(float fraction){
-	settings.end = static_cast<uint32_t>(settings.length * fraction);
+	end = static_cast<uint32_t>(settings.length * fraction);
+	settings.endSaved = end;
+	if(!loop){
+	start = end - previewTime;
+	index = start;
+	}
 }
 
 void Sample::PlayPrepare(){
-	index = settings.start;
+	start = settings.startSaved;
+	end = settings.endSaved;
+	index = start;
 }
 
 // demo
@@ -111,11 +126,9 @@ void Sample::SetRecord(bool recordState){
 
 void Sample::SetPlayback(bool playState){
 	playback = playState;
-	hardware.PrintLine("loop= %d", loop);
 }
 
 void Sample::SetLoop(bool loopState){
 	loop = loopState;
-	hardware.PrintLine("loop= %d", loop);
 }
 

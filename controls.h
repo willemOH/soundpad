@@ -21,9 +21,9 @@ private:
     //pot update parameters
     float pot1old = 0.0f;
     float pot2old = 0.0f;
-    float threshold = 0.01f; 
-	
-    bool potTrigs[4] = {false, false, false, false};
+    float threshold = 0.008f; //so that small flucuations of adc read don't trigger a change in start and end
+                                //could be lower if pot connections pick up less noise on pcb
+    std::array<bool, 4> potTrigs = {false, false, false, false};
     SPUI* ui; // Store a pointer to the UI class
 };
 

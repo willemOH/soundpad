@@ -20,11 +20,13 @@ void Controls::UpdateControlStates() {
     if(abs(pot1 - pot1old) > threshold){
     //hardware.PrintLine("pot1 %d", static_cast<int>(pot1 * 10000));
     pot1old = pot1;
+    potTrigs[0]=true;
     }
-
+   
     if(abs(pot2 - pot2old) > threshold){
     //hardware.PrintLine("pot2 %d", static_cast<int>(pot2 * 10000));
     pot2old = pot2;
+    potTrigs[1]=true;
     }
 //buttons
     bool edge = false;
@@ -60,7 +62,8 @@ void Controls::UpdateControlStates() {
     }
     #endif
     // Directly calls UI method with the pressed buttons list
-    ui->Update(pressedButtons, pot1, pot2, pot3, pot4);
+    ui->Update(pressedButtons, pot1, pot2, pot3, pot4, potTrigs);
+    potTrigs = {false, false, false, false};
 }
 
 void Controls::DebounceButtons(){

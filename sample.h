@@ -19,12 +19,16 @@ private:
 
     StereoBufferChunk* sBuffer;
 
+    uint32_t start;
+    uint32_t end;
+    static uint32_t previewTime; //seconds
+
     struct SampleSettings{ //this would be in a more global class for sampling
         uint32_t length; // length of sample, < BUFFER_MAX
-        uint32_t start;
         uint32_t loopStart;
         uint32_t loopEnd;
-        uint32_t end;
+        uint32_t startSaved;
+        uint32_t endSaved;
     };
 
     struct StereoPair{
