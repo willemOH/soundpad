@@ -6,6 +6,7 @@
 #define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
 
 using namespace daisy;
+using namespace daisysp;
 
 class Sample : public ISample{
 private:
@@ -22,6 +23,8 @@ private:
     uint32_t start;
     uint32_t end;
     static uint32_t previewTime; //seconds
+
+    static float scale[8];
 
     struct SampleSettings{ //this would be in a more global class for sampling
         uint32_t length; // length of sample, < BUFFER_MAX
@@ -67,10 +70,11 @@ public:
     void SetRecord(bool recordState) override;
     void SetPlayback(bool playState) override;
     void SetLoop(bool loopState) override;
-    void SetStart(float fraction);
-    void SetEnd(float fraction);
-    bool GetLoopState();
-    void SetSpeed(float ratio);
+    void SetStart(float fraction) override;
+    void SetEnd(float fraction) override;
+    bool GetLoopState() override;
+    void SetSpeed(float ratio) override;
+    void SetNote(float noteNum) override;
 
     
 };

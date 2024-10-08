@@ -25,6 +25,9 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& s
                 if(sliderTrigs[0]){
                     sample->SetSpeed(slider1);
                 }
+                if(sliderTrigs[1]){
+                    sample->SetNote(slider2);
+                }
                 goto combo;
             default:
                 // Handle unexpected values for the first element
