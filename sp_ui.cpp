@@ -22,7 +22,10 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& s
                     once = false;
                     sample->SetPlayback(true);
                 }
-                goto second_button;
+                if(sliderTrigs[0]){
+                    sample->SetSpeed(slider1);
+                }
+                goto combo;
             default:
                 // Handle unexpected values for the first element
                 break;
@@ -35,9 +38,16 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& s
     }
     else{
         once = true;
+         //sliders
+    if(sliderTrigs[0] || sample->GetLoopState()){
+    sample->SetStart(slider1); //controls will send a lot of triggers for whenever pot moves. when triggered is false for more time than it takes to reset when sliding reasonably fast, preview = true
+    } 
+    if(sliderTrigs[1] || sample->GetLoopState()){
+    sample->SetEnd(slider2);
     }
-    second_button:
-        if (pressedButtons.size() > 1) {
+    }
+    combo:
+        if (pressedButtons.size() > 1) { //second button
             switch (pressedButtons[1]) {
                 case Buttons::BUTTON1: 
                     hardware.PrintLine("setloop reached");
@@ -47,13 +57,5 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& s
                     // Handle unexpected values for the second element
                     break;
             }
-        }
-
-    //sliders
-    if(sliderTrigs[0] || sample->GetLoopState()){
-    sample->SetStart(slider1); //controls will send a lot of triggers for whenever pot moves. when triggered is false for more time than it takes to reset when sliding reasonably fast, preview = true
-    } 
-    if(sliderTrigs[1] || sample->GetLoopState()){
-    sample->SetEnd(slider2);
     }
 }

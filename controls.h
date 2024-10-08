@@ -22,7 +22,9 @@ private:
     float pot1old = 0.0f;
     float pot2old = 0.0f;
     float threshold = 0.008f; //so that small flucuations of adc read don't trigger a change in start and end
+                                //maybe rename to minimumTrigThreshold
                                 //could be lower if pot connections pick up less noise on pcb
+                                //ideally another threshold is set in ui or sample so that it can be tweaked depending on specific control
     std::array<bool, 4> potTrigs = {false, false, false, false};
     SPUI* ui; // Store a pointer to the UI class
 };

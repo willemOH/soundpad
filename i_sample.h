@@ -14,6 +14,7 @@ public:
     virtual void SetStart(float fraction);
     virtual void SetEnd(float fraction);
     virtual bool GetLoopState();
+    virtual void SetSpeed(float ratio);
 };
 
 #endif // I_SAMPLE_H

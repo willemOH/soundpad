@@ -29,6 +29,8 @@ private:
         uint32_t loopEnd;
         uint32_t startSaved;
         uint32_t endSaved;
+        float speed;
+        float tune;
     };
 
     struct StereoPair{
@@ -68,6 +70,7 @@ public:
     void SetStart(float fraction);
     void SetEnd(float fraction);
     bool GetLoopState();
+    void SetSpeed(float ratio);
 
     
 };

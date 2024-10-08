@@ -17,6 +17,8 @@ void Sample::Init(float sampleRate, StereoBufferChunk* soundBuffer){
 	settings.loopEnd = 48000.0f * 0.5f;
 	end = 48000.0f * 1.0f;
 	settings.length = end;
+	settings.speed = 1;
+	settings.tune = 0;
 }
 
 
@@ -51,7 +53,8 @@ void Sample::Playback(){
         {
             float sigL = sBuffer->getSample(index).left;
             float sigR = sBuffer->getSample(index).right;
-            index += 1.0;
+			//index += 1.0;
+      		index += factor;		
             //index += factor;
 			/* if (loop){
 				if (index >= settings.loopEnd)
@@ -104,6 +107,7 @@ void Sample::PlayPrepare(){
 	start = settings.startSaved;
 	end = settings.endSaved;
 	index = start;
+	/* factor = settings.speed * (freq / 440.0f) * (1.0f + std::pow(2.0f, settings.tune / 1200.0f)); */
 }
 
 // demo
@@ -138,5 +142,14 @@ void Sample::SetLoop(bool loopState){
 
 bool Sample::GetLoopState(){
 	return loop;
+}
+
+void Sample::SetSpeed(float ratio){
+	settings.speed = ratio * 2;
+	factor = settings.speed;
+	if(!loop){
+	index = start;
+	SetPlayback(true);
+	}
 }
 
