@@ -3,6 +3,7 @@
 #include "daisy_seed.h"
 #include "i_sample.h"
 #include "stereo_buffer_chunk.h"
+#include "sample_settings.h"
 #define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
 
 using namespace daisy;
@@ -25,16 +26,6 @@ private:
     static uint32_t previewTime; //seconds
 
     static float scale[8];
-
-    struct SampleSettings{ //this would be in a more global class for sampling
-        uint32_t length; // length of sample, < BUFFER_MAX
-        uint32_t loopStart;
-        uint32_t loopEnd;
-        uint32_t startSaved;
-        uint32_t endSaved;
-        float speed;
-        float tune;
-    };
 
     struct StereoPair{
         float left;

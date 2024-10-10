@@ -27,7 +27,7 @@ StereoBufferChunk* soundBuffers[16];
 
 float sigR = 0.0f;
 float sigL = 0.0f;
-Sample sample(sigL, sigR);
+Sample sample(sigL, sigR); //tried to condense sample.init() into this constructor but no sound
 
 Controls controls;
 SPUI ui;

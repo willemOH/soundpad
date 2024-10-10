@@ -20,3 +20,7 @@ I would have though pointer passing to have taken less time than data passing bu
 Conclusion: Because there is at least significant differences in relative time, data copying and even pointer passing is too slow for recording incoming data into buffer. Therefore, for now, I must pass the data directly, even if encapsulation suffers.
 
 ACTUAL Conclusion: Because record() and playback() were not called from the audio callback function, recording to and playing back from buffer were misaligned with the incoming signal rate. So it was not that it was taking too long but now I have a very efficient method of referencing the incoming data at least.
+
+10/10/24
+
+crowded classes seem to be simpler than more abstraction/objects (such as having a recorder function in the sound object instead of record being its own object) because of the need to call from the audio callback almost directly. Objects cannot manage their own loops if they have to do with audio. Inheritance instead of Composition seems to be more compatible.
