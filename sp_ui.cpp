@@ -3,6 +3,7 @@
 
 void SPUI::Init(ISample* sampleInstance) {
     sample = sampleInstance;
+    input = true; //to be sure `else if` of update() sets bool states to false which are being set after samples init somehow; hacky 
 }
 
 void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& slider2, float& slider3, float& slide4, std::array<bool, 4> sliderTrigs) {
@@ -14,6 +15,7 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& s
                     sample->RecordPrepare();
                     once = false;
                     sample->SetRecord(true);
+                    
                 }
                 break;//early exit otherwise use flags to activate functionality
             case Buttons::BUTTON2: //play
@@ -36,7 +38,7 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& s
     }
     else if(input){
         sample->SetRecord(false);
-        sample->SetPlayback(false);
+        sample->SetPlayback(false); //-<-
         input = false;
     }
     else{

@@ -4,19 +4,20 @@
 #include "i_sample.h"
 #include "stereo_buffer_chunk.h"
 #include "sample_settings.h"
+#include "stereo_pair.h"
+#include "playback.h"
+#include "global.h"
+
 #define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
 
 using namespace daisy;
-using namespace daisysp;
 
 class Sample : public ISample{
 private:
-    float index; // index into buffer
-    uint32_t indexInt;
-    float indexFraction;
+
     uint32_t indexRecord;
-    float factor; // how much to advance index for a new sample
-    float freq; // in Hz
+    
+    
     bool gate, gatePrev; //
 
     StereoBufferChunk* sBuffer;
@@ -27,33 +28,20 @@ private:
 
     static float scale[8];
 
-    struct StereoPair{
-        float left;
-        float right;
-    };
-
-    struct StereoPairRef{
-        float& left;
-        float& right;
-        StereoPairRef(float& l, float& r) : left(l), right(r) {}
-    };
-
     StereoPairRef inputRef;
     StereoPair output;
     void Record() override; //record functionality will be in separate class
-    void Playback() override;
-    
+    Playback playback;
 
 public:
     Sample(float& left, float& right); 
     void Init(float sampleRate, StereoBufferChunk* soundBuffer);
     SampleSettings settings;
     void Process();
-    StereoPair GetOutput(){
-        return(output);
-    }; 
+    void ProcessAudioFrame();
+    StereoPair GetOutput();
     bool record;
-    bool playback;
+    bool play;
     bool loop;
     void RecordPrepare() override;
     void PlayPrepare() override;

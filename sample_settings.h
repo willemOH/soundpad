@@ -12,6 +12,11 @@ struct SampleSettings {
         uint32_t endSaved;
         float speed;
         float tune;
+        bool loop;
+        //unsaved?:
+        uint32_t start;
+        uint32_t end;
+        uint32_t factor;
 };
 
 #endif // SETTINGS_H

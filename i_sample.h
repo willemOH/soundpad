@@ -10,7 +10,6 @@ public:
     virtual void SetPlayback(bool playState);
     virtual void SetLoop(bool loopState);
     virtual void Record();
-    virtual void Playback();
     virtual void SetStart(float fraction);
     virtual void SetEnd(float fraction);
     virtual bool GetLoopState();
