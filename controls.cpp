@@ -2,12 +2,16 @@
 
 void Controls::Init(SPUI* uiInstance){
     ui = uiInstance;
-    button[0].Init(hardware.GetPin(29), 1000);
-    button[1].Init(hardware.GetPin(30), 1000);
     adcConfig[0].InitSingle(hardware.GetPin(15)); 
     adcConfig[1].InitSingle(hardware.GetPin(16)); 
     hardware.adc.Init(adcConfig, 2);
     hardware.adc.Start();
+    if (i2c_transport.Init(config.transport_config)){
+        hardware.PrintLine("I2C Transport Initialization Failed");
+    }
+    if (mpr121.Init(config) != Mpr121<Mpr121I2CTransport>::Result::OK){
+        hardware.PrintLine("MPR121 Initialization Failed");
+    }
 }
 
 void Controls::UpdateControlStates() {
@@ -29,29 +33,13 @@ void Controls::UpdateControlStates() {
     potTrigs[1]=true;
     }
 //buttons
-    bool edge = false;
-    DebounceButtons();
-    for (uint8_t i = 0; i < sizeof(button) / sizeof(button[0]); i++) {
-        if (button[i].RisingEdge()) {
-            #ifdef LOGG
-            edge = true;
-            hardware.PrintLine("button %i just pressed", i);
-            #endif
-            pressedButtons.push_back(static_cast<Buttons>(i));
-            //hardware.PrintLine("in list at %i: %u", i, static_cast<unsigned int>(pressedButtons.at(i))); 
+    uint16_t buttonsState = mpr121.Touched();
+        if(buttonsState != old_status){
+            //hardware.PrintLine("touch status: %u", buttonsState);
+            processNewButtonsState(buttonsState);
+            //hardware.PrintLine("pressedButtonsState: [%d,%d]", pressedButtons[0], pressedButtons[1]);
+            old_status = buttonsState;
         }
-        else if(button[i].FallingEdge()){
-            #ifdef LOGG
-            edge = true;
-            hardware.PrintLine("button %i just released", i);
-            #endif
-            //finds enum of button in list that has falling edge and removes it from list if found
-            auto it = std::find(pressedButtons.begin(), pressedButtons.end(), static_cast<Buttons>(i)); 
-            if (it != pressedButtons.end()) {
-                pressedButtons.erase(it);
-            }
-        }
-    }
     #ifdef LOGG
     if(edge){
     // Print the contents of pressedButtons
@@ -66,9 +54,59 @@ void Controls::UpdateControlStates() {
     potTrigs = {false, false, false, false};
 }
 
-void Controls::DebounceButtons(){
-    for(uint8_t i=0; i < sizeof(button) / sizeof(button[0]); i++){
-        button[i].Debounce();
+void Controls::processNewButtonsState(uint16_t buttonsState)
+{
+   if(pressedButtons[0]){ //there are any pressed buttons (index 1 must be full before index 2 can be)
+        uint16_t change = oldButtonsState ^ buttonsState;
+        if(change & oldButtonsState){ //change is subtraction
+            RemoveButton(LSSBtoButton(change));
+        }
+        else{ //change is addition
+            if(pressedButtons[1]){ 
+                return; //no pressed buttons added if already two pressed
+            }
+            AddButton(LSSBtoButton(change));
+        }
     }
+    else{
+        AddButton(LSSBtoButton(buttonsState));
+    }
+    oldButtonsState = buttonsState;
 }
 
+void Controls::RemoveButton(uint8_t button){
+    if(pressedButtons[0] == button){
+         pressedButtons[0] = pressedButtons[1]; //remove first button by popping second value to first
+         pressedButtons[1] = 0; //second button is removed (updated to current state)
+    }
+    else if(pressedButtons[1] == button){
+        pressedButtons[1] = 0;
+    }
+    else{
+        hardware.PrintLine("remove Button error: button %d not found in pressedButtons", button);
+        hardware.PrintLine("pressedButtons[0]: %d, pressedButtons[1]: %d", pressedButtons[0], pressedButtons[1]);
+        }
+}
+
+void Controls::AddButton(uint8_t button){
+    if(!pressedButtons[0]){
+        pressedButtons[0] = button;
+    }
+    else if(!pressedButtons[1]){
+        pressedButtons[1] = button; 
+    }
+    else{
+        hardware.PrintLine("add Button error: both positions in pressedButtons are occupied");
+        hardware.PrintLine("pressedButtons[0]: %d, pressedButtons[1]: %d", pressedButtons[0], pressedButtons[1]);
+        }
+}
+
+uint8_t Controls::LSSBtoButton(uint16_t number) {
+    for (int i = 0; i < 16; ++i) { // Assuming a 16-bit number
+        if (number & (1 << i)) {
+            return i + 1;
+        }
+    }
+    hardware.PrintLine("no bits set, LSSB error");
+    return 0; // Return -1 if no bits are set
+}

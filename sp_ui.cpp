@@ -6,19 +6,19 @@ void SPUI::Init(ISample* sampleInstance) {
     input = true; //to be sure `else if` of update() sets bool states to false which are being set after samples init somehow; hacky 
 }
 
-void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& slider2, float& slider3, float& slide4, std::array<bool, 4> sliderTrigs) {
-    if (!pressedButtons.empty()) {
+void SPUI::Update(uint8_t pressedButtons[2], float& slider1, float& slider2, float& slider3, float& slide4, std::array<bool, 4> sliderTrigs) {
+     if (pressedButtons[0]) { //array is not empty (values shift towards first index)
+        //hardware.PrintLine("pressedButtonsState: [%d,%d]", pressedButtons[0], pressedButtons[1]);
         input = true;
         switch (pressedButtons[0]) {
-            case Buttons::BUTTON1: //record
+            case 1: //record
                 if(once){
                     sample->RecordPrepare();
                     once = false;
                     sample->SetRecord(true);
-                    
                 }
-                break;//early exit otherwise use flags to activate functionality
-            case Buttons::BUTTON2: //play
+                break;
+            case 2: //play
                 if(once){
                     sample->PlayPrepare();
                     once = false;
@@ -52,9 +52,9 @@ void SPUI::Update(std::vector<Buttons>& pressedButtons, float& slider1, float& s
     }
     }
     combo:
-        if (pressedButtons.size() > 1) { //second button
+        if (pressedButtons[1]) { //second button
             switch (pressedButtons[1]) {
-                case Buttons::BUTTON1: 
+                case 1: 
                     hardware.PrintLine("setloop reached");
                     sample->SetLoop(true); 
                     break;

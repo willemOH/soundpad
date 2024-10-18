@@ -24,3 +24,48 @@ ACTUAL Conclusion: Because record() and playback() were not called from the audi
 10/10/24
 
 crowded classes seem to be simpler than more abstraction/objects (such as having a recorder function in the sound object instead of record being its own object) because of the need to call from the audio callback almost directly. Objects cannot manage their own loops if they have to do with audio. Inheritance instead of Composition seems to be more compatible.
+
+10/17/24
+
+the mess that was reading buttons from binary without XOR:
+
+if(pressedButtons[0]){ //there is any pressed buttons (index 1 must be full before index 2 can be)
+        for (uint8_t i = 0; i < 12; ++i){ //scanning all 12 buttons
+            uint8_t button = i + 1; //buttons 1-12
+            if (!(buttonsState & (1 << i))){ // button i is off (0)
+                if(button==pressedButtons[0]){  //the same button (i) is off (0) in the first position in the held array. Must update:
+                    pressedButtons[0] = pressedButtons[1]; //remove first button by popping second value to first
+                    pressedButtons[1] = 0; //second button is removed (updated to current state)
+                } 
+                else if(button==pressedButtons[1]){ //the same button (i) if off in the second position. Must update:
+                        pressedButtons[1] = 0; //second button is removed, first remains
+                } 
+                else if(pressedButtons[1]){
+                    return; //no changes are made as long as both held buttons remain on (not removed)
+                }
+            }
+        }
+        // A button has been removed from the held array or there is one or two open positions in the array
+        for (uint8_t i = 0; i < 12; ++i) { // scanning all 12 buttons
+            uint8_t button = i + 1;
+            if (buttonsState & (1 << i)) { // button i is on (1)
+                if (pressedButtons[0] == 0) { // if pressedButton[1] was 0 when pressedButton[0] matched to off, then both values in the array would be 0. Filling order:
+                    hardware.PrintLine("button 1 released");
+                    pressedButtons[0] = button;
+                } 
+                else if (pressedButtons[1] == 0) { //detects that button 1 is still held so goes for that one
+                    hardware.PrintLine("button 1 release");
+                    pressedButtons[1] = button;
+                }
+            }
+        }
+    }
+    else{ //there are no buttons currently pressed
+        for (uint8_t i = 0; i < 12; ++i){ //scanning all 12 buttons
+            uint8_t button = i + 1;
+            if(buttonsState & (1 << i)){ // button i is on (1)      
+                pressedButtons[0] = button;
+                break; //first button pressed is found
+            }  
+        }
+    } 

@@ -7,17 +7,11 @@
 #define UI_MODE_SOUND 1
 #define MAX_OBSERVERS 2
 
-
-enum class Buttons {
-        BUTTON1,
-        BUTTON2,
-    };
-
 class SPUI { //libDaisy already has a UI class - unnecessary UI display functions
 public:
 
     void Init(ISample* sampleInstance);
-    void Update(std::vector<Buttons>& pressedButtons, float& slider1, float& slider2, float& slider3, float& slide4, std::array<bool, 4> sliderTrigs);
+    void Update(uint8_t pressedButtons[2], float& slider1, float& slider2, float& slider3, float& slide4, std::array<bool, 4> sliderTrigs);
     bool once = true;
     bool record = false;
     bool play = false;
