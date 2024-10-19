@@ -58,13 +58,16 @@ void Controls::processNewButtonsState(uint16_t buttonsState)
 {
    if(pressedButtons[0]){ //there are any pressed buttons (index 1 must be full before index 2 can be)
         uint16_t change = oldButtonsState ^ buttonsState;
-        if(change & oldButtonsState){ //change is subtraction
+        if(!buttonsState){ //clear stuck buttons, if function tries to remove a stuck button, it gets bad, so check first
+            pressedButtons[0] = 0;
+            pressedButtons[1] = 0;
+            hardware.PrintLine("stuck button cleared");
+        }
+        else if(change & oldButtonsState){ //change is subtraction
             RemoveButton(LSSBtoButton(change));
         }
         else{ //change is addition
-            if(pressedButtons[1]){ 
-                return; //no pressed buttons added if already two pressed
-            }
+            //cannot return here if 3rd, nth button. Instead deflect in addbutton or will be blind and unready
             AddButton(LSSBtoButton(change));
         }
     }

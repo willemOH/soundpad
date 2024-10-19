@@ -7,6 +7,20 @@
 #define UI_MODE_SOUND 1
 #define MAX_OBSERVERS 2
 
+enum class Buttons {
+        Play = 12,
+        Pocket = 5,
+        Open = 10,
+        L1 = 1,
+        L2 = 2,
+        L3 = 3,
+        L4 = 4,
+        R1 = 6,
+        R2 = 7,
+        R3 = 8,
+        R4 = 9
+    };
+
 class SPUI { //libDaisy already has a UI class - unnecessary UI display functions
 public:
 

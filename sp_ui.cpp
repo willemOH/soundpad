@@ -1,24 +1,28 @@
 #include "sp_ui.h"
 #include "global.h" // Include globals.h to access hardware
 
+constexpr int toInt(Buttons button) {
+    return static_cast<int>(button);
+}
+
 void SPUI::Init(ISample* sampleInstance) {
     sample = sampleInstance;
     input = true; //to be sure `else if` of update() sets bool states to false which are being set after samples init somehow; hacky 
 }
 
 void SPUI::Update(uint8_t pressedButtons[2], float& slider1, float& slider2, float& slider3, float& slide4, std::array<bool, 4> sliderTrigs) {
+     hardware.PrintLine("pressedButtonsState: [%d,%d]", pressedButtons[0], pressedButtons[1]);
      if (pressedButtons[0]) { //array is not empty (values shift towards first index)
-        //hardware.PrintLine("pressedButtonsState: [%d,%d]", pressedButtons[0], pressedButtons[1]);
         input = true;
         switch (pressedButtons[0]) {
-            case 1: //record
+             case toInt(Buttons::Pocket): //record
                 if(once){
                     sample->RecordPrepare();
                     once = false;
                     sample->SetRecord(true);
                 }
                 break;
-            case 2: //play
+            case toInt(Buttons::Play): //play
                 if(once){
                     sample->PlayPrepare();
                     once = false;
@@ -54,7 +58,7 @@ void SPUI::Update(uint8_t pressedButtons[2], float& slider1, float& slider2, flo
     combo:
         if (pressedButtons[1]) { //second button
             switch (pressedButtons[1]) {
-                case 1: 
+                case toInt(Buttons::Pocket): 
                     hardware.PrintLine("setloop reached");
                     sample->SetLoop(true); 
                     break;
