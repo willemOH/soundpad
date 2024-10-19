@@ -3,8 +3,10 @@
 void Controls::Init(SPUI* uiInstance){
     ui = uiInstance;
     adcConfig[0].InitSingle(hardware.GetPin(15)); 
-    adcConfig[1].InitSingle(hardware.GetPin(16)); 
-    hardware.adc.Init(adcConfig, 2);
+    adcConfig[1].InitSingle(hardware.GetPin(16));
+    adcConfig[2].InitSingle(hardware.GetPin(17)); 
+    adcConfig[3].InitSingle(hardware.GetPin(18));  
+    hardware.adc.Init(adcConfig, 4);
     hardware.adc.Start();
     if (i2c_transport.Init(config.transport_config)){
         hardware.PrintLine("I2C Transport Initialization Failed");
@@ -18,8 +20,8 @@ void Controls::UpdateControlStates() {
 //sliders
     float pot1 = hardware.adc.GetFloat(0);
     float pot2 = hardware.adc.GetFloat(1);
-    float pot3 = 0;
-    float pot4 = 0;
+    float pot3 = hardware.adc.GetFloat(2);
+    float pot4 = hardware.adc.GetFloat(3);
 
     if(abs(pot1 - pot1old) > threshold){
     //hardware.PrintLine("pot1 %d", static_cast<int>(pot1 * 10000));
@@ -31,6 +33,18 @@ void Controls::UpdateControlStates() {
     //hardware.PrintLine("pot2 %d", static_cast<int>(pot2 * 10000));
     pot2old = pot2;
     potTrigs[1]=true;
+    }
+
+    if(abs(pot3 - pot3old) > threshold){
+    //hardware.PrintLine("pot1 %d", static_cast<int>(pot1 * 10000));
+    pot3old = pot3;
+    potTrigs[2]=true;
+    }
+   
+    if(abs(pot4 - pot4old) > threshold){
+    //hardware.PrintLine("pot2 %d", static_cast<int>(pot2 * 10000));
+    pot4old = pot4;
+    potTrigs[3]=true;
     }
 //buttons
     uint16_t buttonsState = mpr121.Touched();

@@ -26,9 +26,11 @@ private:
     uint8_t LSSBtoButton(uint16_t number);
     void processNewButtonsState(uint16_t ButtonsState);
     //potentiometers
-    AdcChannelConfig adcConfig[2];
+    AdcChannelConfig adcConfig[4];
     float pot1old = 0.0f;
     float pot2old = 0.0f;
+    float pot3old = 0.0f;
+    float pot4old = 0.0f;
     float threshold = 0.008f; //so that small flucuations of adc read don't trigger a change in start and end
                                 //maybe rename to minimumTrigThreshold
                                 //could be lower if pot connections pick up less noise on pcb
