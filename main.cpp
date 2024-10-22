@@ -6,6 +6,16 @@
 #include "sp_ui.h"
 #include "controls.h"
 #include "global.h"
+
+//ostensibly necessary for sd card writing
+#include "daisysp.h"
+#include <stdio.h>
+#include <string.h>
+#include "daisy_core.h"
+#include "util/wav_format.h"
+#include "ff.h"
+#include "fatfs.h"
+
 using namespace daisy;
 using namespace daisysp;
 
@@ -14,8 +24,14 @@ using namespace daisysp;
 
 DaisySeed hardware;
 
+SdmmcHandler sdcard;
+FatFSInterface fsi;
+
 float sysSampleRate;
 float sysCallbackRate;
+
+WavWriter<32768> writer;
+bool saved;
 
 // sampler
 #define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
@@ -70,7 +86,12 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 		sample.Process();
 		out[i]  = sample.GetOutput().left;
         out[i + 1] = sample.GetOutput().right;
+
+		float samples[2]; // Array to hold samples for 2 channels (stereo)
+        samples[0] = sample.GetOutput().left; // Generate sample for the left channel
+        samples[1] = sample.GetOutput().right;    // Use the same sample for the right channel (mono to stereo)
 		
+		writer.Sample(samples); // Call the Sample function with the array
 	// measure MCU utilization
    	#ifdef MEASURE
 	// measure - stop
@@ -89,6 +110,9 @@ int main(void)
     hardware.Configure();
     hardware.Init();
     
+	saved = false;
+	size_t blocksize = 4;
+
     sysSampleRate = hardware.AudioSampleRate();
 	sysCallbackRate = hardware.AudioCallbackRate();
 	
@@ -107,7 +131,38 @@ int main(void)
 	//sGate = false;
 	//sGatePrev = false;
 	
+	
+    SdmmcHandler::Config sd_cfg;
+    sd_cfg.Defaults();
+    if (sdcard.Init(sd_cfg) != SdmmcHandler::Result::OK)
+    {
+        hardware.PrintLine("SD card initialization failed");
+        return 1;
+    }
+    if (fsi.Init(FatFSInterface::Config::MEDIA_SD) != FatFSInterface::Result::OK)
+    {
+        hardware.PrintLine("File system initialization failed");
+        return 1;
+    }
+    if (f_mount(&fsi.GetSDFileSystem(), "/", 1) != FR_OK)
+    {
+        hardware.PrintLine("File system mount failed");
+        return 1;
+    }
+    //sampler.Init(fsi.GetSDPath());
+	System::Delay(100);
+
+    WavWriter<32768>::Config config;
+    config.samplerate = sysSampleRate; 
+    config.channels = 2;          
+    config.bitspersample = 16;    
+    writer.Init(config);
+
+     // Open WAV file
+    writer.OpenFile("Test.wav");
+
 	// start callback
+	hardware.SetAudioBlockSize(blocksize);
     hardware.StartAudio(AudioCallback);
 
     //update loop
@@ -117,6 +172,12 @@ int main(void)
 		//PrintDebugInfo();
 		#endif
 		controls.UpdateControlStates();
+		writer.Write();
+		if(controls.saveTestWav && !saved){
+			writer.SaveFile();
+            hardware.PrintLine("file saved");
+			saved = true;
+		}
         System::Delay(1);
     }
 }

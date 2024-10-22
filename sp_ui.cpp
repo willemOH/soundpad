@@ -11,7 +11,7 @@ void SPUI::Init(ISample* sampleInstance) {
 }
 
 void SPUI::Update(uint8_t pressedButtons[2], float& slider1, float& slider2, float& slider3, float& slider4, std::array<bool, 4> sliderTrigs) {
-     hardware.PrintLine("pressedButtonsState: [%d,%d]", pressedButtons[0], pressedButtons[1]); 
+     //hardware.PrintLine("pressedButtonsState: [%d,%d]", pressedButtons[0], pressedButtons[1]); 
     /* if(sliderTrigs[1]){
         sample->SetNote(slider2);
     } */

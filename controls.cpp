@@ -66,6 +66,9 @@ void Controls::UpdateControlStates() {
     // Directly calls UI method with the pressed buttons list
     ui->Update(pressedButtons, pot1, pot2, pot3, pot4, potTrigs);
     potTrigs = {false, false, false, false};
+    if(pressedButtons[0] == 10){
+        saveTestWav = true;
+    }
 }
 
 void Controls::processNewButtonsState(uint16_t buttonsState)
