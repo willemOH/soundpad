@@ -42,7 +42,6 @@ public:
     StereoPair GetOutput();
     bool record;
     bool play;
-    bool loop;
     void RecordPrepare() override;
     void PlayPrepare() override;
     void FillBuffer(float sampleRate);

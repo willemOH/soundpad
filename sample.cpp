@@ -40,10 +40,10 @@ void Sample::Process() {
 	if(play){
 		playback.ProcessAudioFrame();
 	}
-	else{
+	else{ //TODO: add this signal to playback instead of being replaced by it
 		// pass through
-	playback.output.right = inputRef.right;
-	playback.output.left = inputRef.left;
+		playback.output.right = inputRef.right;
+		playback.output.left = inputRef.left;
 	}
 }
 
@@ -77,11 +77,11 @@ void Sample::SetStart(float fraction){
 	if(!settings.loop){
 	playback.end = playback.start + previewTime;
 	playback.index = playback.start;
-	SetPlayback(true);
 	}
 	else{
-		playback.loop = false;
+		playback.loop = true;
 	}
+	SetPlayback(true);
 }
 
 void Sample::SetEnd(float fraction){
@@ -90,11 +90,11 @@ void Sample::SetEnd(float fraction){
 	if(!settings.loop){
 	playback.start = playback.end - previewTime;
 	playback.index = playback.start;
-	SetPlayback(true);
 	}
 	else{
-		playback.loop = false;
-	}
+		playback.loop = true;
+	} 
+	SetPlayback(true);
 }
 
 void Sample::PlayPrepare(){
@@ -137,8 +137,11 @@ bool Sample::GetLoopState(){
 
 void Sample::SetSpeed(float ratio){
 	settings.speed = ratio * 2;
-	if(!loop){
+	if(!settings.loop){
 	playback.PlayPrepare();
+	SetPlayback(true);
+	}
+	else{
 	SetPlayback(true);
 	}
 }

@@ -3,6 +3,8 @@
 void Playback::ProcessAudioFrame(){
     if (index < end)
         {
+            factor = settings.speed * (freq / 440.0f);
+            /* 	factor = settings.speed * (freq / 440.0f) * (1.0f + std::pow(2.0f, settings.tune / 1200.0f)); */
             float sigL = sBuffer->getSample(index).left;
             float sigR = sBuffer->getSample(index).right;
 			//index += 1.0;
@@ -51,7 +53,5 @@ void Playback::PlayPrepare(){
     index = settings.startSaved;
     start = settings.startSaved;
     end = settings.endSaved;
-    factor = settings.speed * (freq / 440.0f);
     loop = settings.loop;
-    /* 	factor = settings.speed * (freq / 440.0f) * (1.0f + std::pow(2.0f, settings.tune / 1200.0f)); */
 }
