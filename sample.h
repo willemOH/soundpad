@@ -29,18 +29,23 @@ private:
     static float scale[8];
 
     StereoPairRef inputRef;
-    StereoPair output;
-    void Record() override; //record functionality will be in separate class
     Playback playback;
+    WavWriter<32768>& sdWriter;
+    StereoPair output;
+    bool fileOpened = false;
+    void Record() override; //record functionality will be in separate class
+    
 
 public:
-    Sample(float& left, float& right); 
+    Sample(float& left, float& right, WavWriter<32768>& writer); 
     void Init(float sampleRate, StereoBufferChunk* soundBuffer);
     SampleSettings settings;
     void Process();
     void ProcessAudioFrame();
+    void WriteProcess();
     StereoPair GetOutput();
     bool record;
+    bool recording;
     bool play;
     void RecordPrepare() override;
     void PlayPrepare() override;

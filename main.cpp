@@ -31,7 +31,6 @@ float sysSampleRate;
 float sysCallbackRate;
 
 WavWriter<32768> writer;
-bool saved;
 
 // sampler
 #define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
@@ -43,7 +42,7 @@ StereoBufferChunk* soundBuffers[16];
 
 float sigR = 0.0f;
 float sigL = 0.0f;
-Sample sample(sigL, sigR); //tried to condense sample.init() into this constructor but no sound
+Sample sample(sigL, sigR, writer); //tried to condense sample.init() into this constructor but no sound
 
 Controls controls;
 SPUI ui;
@@ -86,12 +85,6 @@ void AudioCallback(AudioHandle::InterleavingInputBuffer  in,
 		sample.Process();
 		out[i]  = sample.GetOutput().left;
         out[i + 1] = sample.GetOutput().right;
-
-		float samples[2]; // Array to hold samples for 2 channels (stereo)
-        samples[0] = sample.GetOutput().left; // Generate sample for the left channel
-        samples[1] = sample.GetOutput().right;    // Use the same sample for the right channel (mono to stereo)
-		
-		writer.Sample(samples); // Call the Sample function with the array
 	// measure MCU utilization
    	#ifdef MEASURE
 	// measure - stop
@@ -110,7 +103,6 @@ int main(void)
     hardware.Configure();
     hardware.Init();
     
-	saved = false;
 	size_t blocksize = 4;
 
     sysSampleRate = hardware.AudioSampleRate();
@@ -158,8 +150,6 @@ int main(void)
     config.bitspersample = 16;    
     writer.Init(config);
 
-     // Open WAV file
-    writer.OpenFile("Test.wav");
 
 	// start callback
 	hardware.SetAudioBlockSize(blocksize);
@@ -172,12 +162,7 @@ int main(void)
 		//PrintDebugInfo();
 		#endif
 		controls.UpdateControlStates();
-		writer.Write();
-		if(controls.saveTestWav && !saved){
-			writer.SaveFile();
-            hardware.PrintLine("file saved");
-			saved = true;
-		}
+		sample.WriteProcess();
         System::Delay(1);
     }
 }

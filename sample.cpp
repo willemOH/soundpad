@@ -1,6 +1,6 @@
 #include "sample.h"
 
-Sample::Sample(float& left, float& right) : inputRef(left, right), playback(settings) {} //references must be intialized upon construction
+Sample::Sample(float& left, float& right, WavWriter<32768>& writer) : inputRef(left, right), playback(settings), sdWriter(writer) {} //references must be intialized upon construction
 
 uint32_t Sample::previewTime = 0.1 * 48000; //in seconds times samples
 
@@ -31,7 +31,22 @@ void Sample::Init(float sampleRate, StereoBufferChunk* soundBuffer){
 
 	playback.sBuffer = soundBuffer;
 }
-
+void Sample::WriteProcess(){
+	if(record){
+		recording = true;
+		if(!fileOpened){
+			sdWriter.OpenFile("sample1.wav");
+			fileOpened = true;
+		}
+		sdWriter.Write();
+	}
+	else if(recording){
+			sdWriter.SaveFile();
+            //hardware.PrintLine("file saved"); //audio callback does not like printlines
+			recording = false;
+			fileOpened = false;
+		}
+}
 
 void Sample::Process() {
 	if(record){
@@ -56,6 +71,10 @@ void Sample::Record(){
 	if (indexRecord < (BUFFER_MAX - 1))
 	{
 		sBuffer->setValue(indexRecord, inputRef.left, inputRef.right);
+		float write[2]; 
+		write[0] = inputRef.left; 
+   	 	write[1] = inputRef.right;    
+		sdWriter.Sample(write); 
 		indexRecord++;
 	}
 	settings.loopEnd = indexRecord;

@@ -10,7 +10,6 @@ class Controls {
 public:
     void Init(SPUI* uiInstance); // Pass a pointer to the UI class
     void UpdateControlStates();
-    bool saveTestWav = false;
 
 private:
     DaisySeed hardware;
