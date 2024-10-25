@@ -30,13 +30,12 @@ FatFSInterface fsi;
 float sysSampleRate;
 float sysCallbackRate;
 
-WavWriter<32768> writer;
+WavWriter<16384> writer;
 
 // sampler
-#define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
-float DSY_SDRAM_BSS BufferR[BUFFER_MAX];
-float DSY_SDRAM_BSS BufferL[BUFFER_MAX];
-StereoBufferChunk Buffer(BufferL, BufferR, 48000, 2 * 48000);
+#define BUFFER_MAX (48000 * 349) // 349.52 secs; 48k * 2 (stereo) * 2  (16-bit or 2 bytes per sample) = 192k/s
+float DSY_SDRAM_BSS Buffer[BUFFER_MAX];
+//StereoBufferChunk StereoBuffer(Buffer, 48000, 2 * 48000);
 int soundSeconds = 2;
 StereoBufferChunk* soundBuffers[16];
 
@@ -58,10 +57,10 @@ enum millisecondDivisions : uint32_t{ // can be called without using millisecond
 
 void AllocateBufferChunks(millisecondDivisions division){
 	uint32_t start = 0;
-	soundBuffers[0] = new StereoBufferChunk(BufferL, BufferR, 0, division * 48); // first chunk given start and end index of main buffer size
+	soundBuffers[0] = new StereoBufferChunk(Buffer, 0, division * 48); // first chunk given start and end index of main buffer size
 	start += division;
 	for(int i=1; i<16; i++){
-		soundBuffers[i] = new StereoBufferChunk(BufferL, BufferR, start * 48, (start + start) * 48);
+		soundBuffers[i] = new StereoBufferChunk(Buffer, start * 48, (start + start) * 48);
 		start += division;
 	}
 } 
@@ -144,7 +143,7 @@ int main(void)
     //sampler.Init(fsi.GetSDPath());
 	System::Delay(100);
 
-    WavWriter<32768>::Config config;
+    WavWriter<16384>::Config config;
     config.samplerate = sysSampleRate; 
     config.channels = 2;          
     config.bitspersample = 16;    

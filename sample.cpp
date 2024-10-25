@@ -1,6 +1,6 @@
 #include "sample.h"
 
-Sample::Sample(float& left, float& right, WavWriter<32768>& writer) : inputRef(left, right), playback(settings), sdWriter(writer) {} //references must be intialized upon construction
+Sample::Sample(float& left, float& right, WavWriter<16384>& writer) : inputRef(left, right), playback(settings), sdWriter(writer) {} //references must be intialized upon construction
 
 uint32_t Sample::previewTime = 0.1 * 48000; //in seconds times samples
 
@@ -75,12 +75,12 @@ void Sample::Record(){
 		write[0] = inputRef.left; 
    	 	write[1] = inputRef.right;    
 		sdWriter.Sample(write); 
-		indexRecord++;
+		indexRecord+=2; //interleaved: 2 channels advance (l + r)
 	}
-	settings.loopEnd = indexRecord;
-	settings.endSaved = indexRecord;
+	settings.endSaved = indexRecord / 2; //adjusted for interleave
+	settings.loopEnd = settings.endSaved;
 	end = settings.endSaved;
-	settings.length = indexRecord;
+	settings.length = settings.endSaved;
 }
 
 void Sample::RecordPrepare(){ 

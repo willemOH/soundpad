@@ -7,8 +7,8 @@
 #include "stereo_pair.h"
 #include "playback.h"
 #include "global.h"
-
-#define BUFFER_MAX (48000 * 60) // 60 secs; 48k * 2 * 4 = 384k/s 
+//this should be defined in global
+#define BUFFER_MAX (48000 * 349) // 349.52 secs; 48k * 2 (stereo) * 2  (16-bit or 2 bytes per sample) = 192k/s
 
 using namespace daisy;
 
@@ -30,14 +30,14 @@ private:
 
     StereoPairRef inputRef;
     Playback playback;
-    WavWriter<32768>& sdWriter;
+    WavWriter<16384>& sdWriter;
     StereoPair output;
     bool fileOpened = false;
     void Record() override; //record functionality will be in separate class
     
 
 public:
-    Sample(float& left, float& right, WavWriter<32768>& writer); 
+    Sample(float& left, float& right, WavWriter<16384>& writer); 
     void Init(float sampleRate, StereoBufferChunk* soundBuffer);
     SampleSettings settings;
     void Process();

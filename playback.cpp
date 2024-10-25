@@ -5,8 +5,9 @@ void Playback::ProcessAudioFrame(){
         {
             factor = settings.speed * (freq / 440.0f);
             /* 	factor = settings.speed * (freq / 440.0f) * (1.0f + std::pow(2.0f, settings.tune / 1200.0f)); */
-            float sigL = sBuffer->getSample(index).left;
-            float sigR = sBuffer->getSample(index).right;
+            float sigL = sBuffer->getSample(index * 2); //* 2 to access the buffer as if it contained single left and right channel structs
+            float sigR = sBuffer->getSample(index * 2 + 1); // so factor can advance normally as if just through channel pairs
+            
 			//index += 1.0;
       		index += factor;		
             //index += factor;
