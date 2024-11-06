@@ -128,17 +128,14 @@ int main(void)
     if (sdcard.Init(sd_cfg) != SdmmcHandler::Result::OK)
     {
         hardware.PrintLine("SD card initialization failed");
-        return 1;
     }
     if (fsi.Init(FatFSInterface::Config::MEDIA_SD) != FatFSInterface::Result::OK)
     {
         hardware.PrintLine("File system initialization failed");
-        return 1;
     }
     if (f_mount(&fsi.GetSDFileSystem(), "/", 1) != FR_OK)
     {
         hardware.PrintLine("File system mount failed");
-        return 1;
     }
     //sampler.Init(fsi.GetSDPath());
 	System::Delay(100);
