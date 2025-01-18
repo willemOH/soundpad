@@ -576,154 +576,6 @@
 				)
 			)
 		)
-		(symbol "Device:Microphone"
-			(pin_names
-				(offset 0.0254) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "MK"
-				(at -3.81 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify right)
-				)
-			)
-			(property "Value" "Microphone"
-				(at -3.81 -0.635 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify right)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 2.54 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 2.54 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Microphone"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "microphone"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Microphone_0_1"
-				(polyline
-					(pts
-						(xy -2.54 2.54) (xy -2.54 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 3.81) (xy 0.762 3.81)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.508 4.064) (xy 0.508 3.556)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0)
-					(radius 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Microphone_1_1"
-				(pin passive line
-					(at 0 -5.08 90)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 5.08 270)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Device:R"
 			(pin_numbers hide)
 			(pin_names
@@ -3759,6 +3611,26 @@
 	)
 	(wire
 		(pts
+			(xy 222.25 50.8) (xy 224.79 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "30a8b37f-9a6f-4159-b4b5-61374f5674e5")
+	)
+	(wire
+		(pts
+			(xy 247.65 58.42) (xy 259.08 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "328e75a4-b1b3-4e80-b965-b7d4e1494045")
+	)
+	(wire
+		(pts
 			(xy 66.04 107.95) (xy 78.74 107.95)
 		)
 		(stroke
@@ -3906,6 +3778,16 @@
 			(type default)
 		)
 		(uuid "497095b8-5072-4702-9c4b-a658e2fa7b6c")
+	)
+	(wire
+		(pts
+			(xy 213.36 58.42) (xy 224.79 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4b5aec0f-796e-4125-980b-9ba36a465ae6")
 	)
 	(wire
 		(pts
@@ -4349,6 +4231,16 @@
 	)
 	(wire
 		(pts
+			(xy 222.25 53.34) (xy 224.79 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9fd55125-cd6d-4deb-b463-5b13f05244f1")
+	)
+	(wire
+		(pts
 			(xy 54.61 41.91) (xy 59.69 41.91)
 		)
 		(stroke
@@ -4499,16 +4391,6 @@
 	)
 	(wire
 		(pts
-			(xy 31.75 99.06) (xy 29.21 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b2b858af-cacb-4dec-b114-f640d9463a54")
-	)
-	(wire
-		(pts
 			(xy 53.34 91.44) (xy 58.42 91.44)
 		)
 		(stroke
@@ -4526,16 +4408,6 @@
 			(type default)
 		)
 		(uuid "b790970f-5b66-4757-9090-e322e8b2f13a")
-	)
-	(wire
-		(pts
-			(xy 21.59 165.1) (xy 21.59 156.21)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b92db275-c9ef-4b8f-b4d7-cfbe51a7e66f")
 	)
 	(wire
 		(pts
@@ -4716,16 +4588,6 @@
 			(type default)
 		)
 		(uuid "e9bf3336-ceef-4735-9f36-2a1bf0d1f9d1")
-	)
-	(wire
-		(pts
-			(xy 19.05 107.95) (xy 19.05 99.06)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea652be7-80fd-41aa-b0d0-3017f5be86cf")
 	)
 	(wire
 		(pts
@@ -5121,9 +4983,9 @@
 			)
 		)
 	)
-	(global_label "MicL"
+	(global_label "D-"
 		(shape input)
-		(at 31.75 156.21 270)
+		(at 222.25 53.34 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -5131,9 +4993,9 @@
 			)
 			(justify right)
 		)
-		(uuid "3d1c13b6-5c89-4429-88f2-6fbb67ec43f4")
+		(uuid "3e0b14af-9947-47d5-90f4-c59b95a33471")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 31.75 163.61 90)
+			(at 216.4224 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5165,6 +5027,28 @@
 			)
 		)
 	)
+	(global_label "D+"
+		(shape input)
+		(at 222.25 50.8 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "63a70718-18b3-4af9-82e1-2a3cff5152fd")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 216.4224 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "SD_CMD"
 		(shape input)
 		(at 152.4 46.99 180)
@@ -5178,28 +5062,6 @@
 		(uuid "65a14707-2b9a-47ff-92de-66d83c720ecb")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 141.9763 46.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MicR"
-		(shape input)
-		(at 31.75 99.06 270)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "82779c7a-7ce4-4da6-b974-9f5b8f47e1a7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 31.75 106.46 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6203,6 +6065,72 @@
 		)
 	)
 	(symbol
+		(lib_id "daisy_seed:3V3_D")
+		(at 213.36 58.42 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "23c90748-a8e8-4614-bc09-88e1af63f37c")
+		(property "Reference" "#PWR017"
+			(at 209.55 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "5V"
+			(at 213.36 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 213.36 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 213.36 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 213.36 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "78272730-ec37-4241-9844-28220c5df34b")
+		)
+		(instances
+			(project "soundpad"
+				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
+					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 69.85 118.11 180)
 		(unit 1)
@@ -6853,72 +6781,6 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
 					(reference "R71")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 19.05 107.95 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "3fd65127-cf76-4b9e-8bae-c549ccb65f6d")
-		(property "Reference" "#PWR093"
-			(at 19.05 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 19.05 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 19.05 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 19.05 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 19.05 107.95 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "16f41a8d-a559-4051-a489-533ee3ccf0c8")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
-					(reference "#PWR093")
 					(unit 1)
 				)
 			)
@@ -7752,74 +7614,6 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
 					(reference "#PWR077")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Microphone")
-		(at 24.13 99.06 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6a99664e-c10f-4a7f-9485-e2ecc03b8bed")
-		(property "Reference" "MK2"
-			(at 24.8285 91.44 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Microphone"
-			(at 24.8285 93.98 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "soundpad_library:AOM-5024L-HD-R"
-			(at 26.67 99.06 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 26.67 99.06 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Microphone"
-			(at 24.13 99.06 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e0bc1a21-bfe1-4b2f-8cb9-392527d10533")
-		)
-		(pin "1"
-			(uuid "e30ca2d7-491a-422e-8305-c404e96b5379")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
-					(reference "MK2")
 					(unit 1)
 				)
 			)
@@ -9621,6 +9415,72 @@
 		)
 	)
 	(symbol
+		(lib_id "daisy_seed:3V3_D")
+		(at 259.08 58.42 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dfcf3f01-a76e-4711-88dd-ca4f75d4a4af")
+		(property "Reference" "#PWR024"
+			(at 262.89 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "5V"
+			(at 259.08 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 259.08 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 259.08 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 259.08 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8fbb6f92-9267-47b8-a362-fe8208a874fe")
+		)
+		(instances
+			(project "soundpad"
+				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
+					(reference "#PWR024")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 50.8 57.15 0)
 		(unit 1)
@@ -10476,140 +10336,6 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
 					(reference "U9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 21.59 165.1 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f4ab3bc0-7eac-4aeb-9b01-85ae3d47cdd4")
-		(property "Reference" "#PWR074"
-			(at 21.59 171.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 21.59 170.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 21.59 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 21.59 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 21.59 165.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cfe19ea9-807e-4a39-9ad1-5d7f7416674e")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
-					(reference "#PWR074")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:Microphone")
-		(at 26.67 156.21 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "f5cbe4b4-f109-42ae-aaef-f0894dca5287")
-		(property "Reference" "MK1"
-			(at 27.3685 148.59 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Microphone"
-			(at 27.3685 151.13 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "soundpad_library:AOM-5024L-HD-R"
-			(at 29.21 156.21 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 29.21 156.21 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Microphone"
-			(at 26.67 156.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "ee95db83-dfb4-45bf-a203-71129529bf39")
-		)
-		(pin "1"
-			(uuid "f6905c90-912d-42be-8c17-d5d6edb84fb0")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
-					(reference "MK1")
 					(unit 1)
 				)
 			)

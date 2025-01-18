@@ -431,7 +431,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "soundpad.kicad_pro",
+    "filename": "soundpad_top.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -618,20 +618,8 @@
   },
   "sheets": [
     [
-      "e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7",
+      "5af2837e-f0e3-4eef-9463-be00f7a18316",
       "Root"
-    ],
-    [
-      "46e63e7d-a10d-4bce-9b9b-cc9a5a88265f",
-      "capacitive_touch"
-    ],
-    [
-      "9194bf31-8079-4b2f-befe-901822c457d4",
-      "LEDs"
-    ],
-    [
-      "1fe70b28-8b31-4106-8d94-8f01409bdfba",
-      "IO_SDcard"
     ]
   ],
   "text_variables": {}
