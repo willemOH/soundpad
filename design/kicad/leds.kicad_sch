@@ -1668,16 +1668,6 @@
 	)
 	(wire
 		(pts
-			(xy 260.35 88.9) (xy 265.43 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1caf8e5e-2300-483d-a235-bfcaeff2bbbb")
-	)
-	(wire
-		(pts
 			(xy 151.13 170.18) (xy 154.94 170.18)
 		)
 		(stroke
@@ -1715,16 +1705,6 @@
 			(type default)
 		)
 		(uuid "1f7e2463-a656-4dca-bdda-d345ba68ce9f")
-	)
-	(wire
-		(pts
-			(xy 260.35 74.93) (xy 265.43 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "22abe489-53c4-444e-92f1-a3722d9aa7a6")
 	)
 	(wire
 		(pts
@@ -1835,16 +1815,6 @@
 			(type default)
 		)
 		(uuid "2ca721c7-7794-493e-a4b6-496e396acba2")
-	)
-	(wire
-		(pts
-			(xy 260.35 114.3) (xy 265.43 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2d5afdb0-a43d-4f91-a767-2f99de7c36e3")
 	)
 	(wire
 		(pts
@@ -2118,16 +2088,6 @@
 	)
 	(wire
 		(pts
-			(xy 278.13 74.93) (xy 273.05 74.93)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "452712fb-cdb5-414c-82a7-6615258f7da7")
-	)
-	(wire
-		(pts
 			(xy 90.17 167.64) (xy 90.17 162.56)
 		)
 		(stroke
@@ -2255,16 +2215,6 @@
 			(type default)
 		)
 		(uuid "4f7e0bac-8600-4486-aa6a-b8c47e028dc2")
-	)
-	(wire
-		(pts
-			(xy 276.86 63.5) (xy 271.78 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4fd863ee-bb21-4d62-b198-913f43c306a3")
 	)
 	(wire
 		(pts
@@ -2415,16 +2365,6 @@
 			(type default)
 		)
 		(uuid "5cb09520-a4e9-421d-a0ff-6650121272c8")
-	)
-	(wire
-		(pts
-			(xy 276.86 49.53) (xy 271.78 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5db22da8-02bf-4846-bbce-e1299d836791")
 	)
 	(wire
 		(pts
@@ -2598,16 +2538,6 @@
 	)
 	(wire
 		(pts
-			(xy 278.13 101.6) (xy 273.05 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "74743658-66c1-4e06-ad73-69dc43b1738d")
-	)
-	(wire
-		(pts
 			(xy 146.05 177.8) (xy 154.94 177.8)
 		)
 		(stroke
@@ -2758,16 +2688,6 @@
 	)
 	(wire
 		(pts
-			(xy 278.13 114.3) (xy 273.05 114.3)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "850a33ed-2d15-4988-b269-96be1cba5fb4")
-	)
-	(wire
-		(pts
 			(xy 69.85 63.5) (xy 72.39 63.5)
 		)
 		(stroke
@@ -2835,16 +2755,6 @@
 			(type default)
 		)
 		(uuid "8cd5c4a4-fcac-4a6c-b6dc-6f9c2570a3fc")
-	)
-	(wire
-		(pts
-			(xy 260.35 63.5) (xy 264.16 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8d221761-3981-4422-bca3-61cb1e9e8b13")
 	)
 	(wire
 		(pts
@@ -3578,16 +3488,6 @@
 	)
 	(wire
 		(pts
-			(xy 260.35 101.6) (xy 265.43 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d6ad39dd-fd0e-40ff-aa99-91e5a79aa29b")
-	)
-	(wire
-		(pts
 			(xy 234.95 88.9) (xy 229.87 88.9)
 		)
 		(stroke
@@ -3798,16 +3698,6 @@
 	)
 	(wire
 		(pts
-			(xy 260.35 49.53) (xy 264.16 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f4782b4a-3e69-448a-a526-f44ce9743fbf")
-	)
-	(wire
-		(pts
 			(xy 218.44 62.23) (xy 222.25 62.23)
 		)
 		(stroke
@@ -3835,16 +3725,6 @@
 			(type default)
 		)
 		(uuid "f7d7ff8c-70f8-4ca4-8924-c26a97eb9af2")
-	)
-	(wire
-		(pts
-			(xy 278.13 88.9) (xy 273.05 88.9)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f85f1749-835f-4c3f-835a-2f411716441d")
 	)
 	(wire
 		(pts
@@ -4114,7 +3994,7 @@
 		)
 		(uuid "18d3575e-6dd2-4086-b238-1e3907a33900")
 	)
-	(label "LED_39"
+	(label "LED_4"
 		(at 67.31 153.67 0)
 		(fields_autoplaced yes)
 		(effects
@@ -4389,17 +4269,6 @@
 		)
 		(uuid "578b049f-d1b1-448a-977e-ede8bc675ce3")
 	)
-	(label "LED_14"
-		(at 129.54 160.02 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "58c3d4dd-810b-4d23-9668-4dca1c5e43e3")
-	)
 	(label "LED_5"
 		(at 25.4 76.2 180)
 		(fields_autoplaced yes)
@@ -4543,17 +4412,6 @@
 		)
 		(uuid "6dccbf21-b1eb-4d56-beda-0a9a3252fb09")
 	)
-	(label "LED_39"
-		(at 67.31 156.21 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "6ea43f10-f77e-413e-be7f-4c16a88d6e35")
-	)
 	(label "LED_43"
 		(at 252.73 49.53 180)
 		(fields_autoplaced yes)
@@ -4564,17 +4422,6 @@
 			(justify right bottom)
 		)
 		(uuid "6f5d3b2f-b3fa-4f76-b75f-83236c432275")
-	)
-	(label "LED_26"
-		(at 129.54 144.78 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "73cd8dfe-5e60-45dc-ab5b-00a4d806478f")
 	)
 	(label "LED_29"
 		(at 129.54 175.26 0)
@@ -7894,73 +7741,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 256.54 74.93 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3aa5e5be-a987-4c02-b8a6-c2461c9330b6")
-		(property "Reference" "R84"
-			(at 256.54 72.39 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "140R"
-			(at 256.54 74.93 90)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 256.54 76.708 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 256.54 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 256.54 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e7c1b2fb-aab7-4da6-ace8-877089e38d2a")
-		)
-		(pin "1"
-			(uuid "7356bdb6-21a6-4740-81ed-b9cfea9fac40")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "R84")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "daisy_seed:3V3_D")
 		(at 234.95 49.53 0)
 		(unit 1)
@@ -8880,72 +8660,6 @@
 		)
 	)
 	(symbol
-		(lib_id "daisy_seed:3V3_D")
-		(at 278.13 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4a4c125a-39b9-446a-8eb6-56520e74ccc1")
-		(property "Reference" "#PWR0112"
-			(at 281.94 90.17 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "5V"
-			(at 278.13 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 278.13 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 278.13 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 278.13 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "969dc215-434b-4a79-9021-1987a7f9e66a")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "#PWR0112")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 33.02 88.9 90)
 		(unit 1)
@@ -9722,73 +9436,6 @@
 	)
 	(symbol
 		(lib_id "Device:R")
-		(at 256.54 114.3 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "68cab1e3-bb37-4a9d-bc4a-c873cb285449")
-		(property "Reference" "R87"
-			(at 256.54 111.76 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "140R"
-			(at 256.54 114.3 90)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 256.54 116.078 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 256.54 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 256.54 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "cbeedf5c-d710-4370-8935-dcd32c50a8e9")
-		)
-		(pin "1"
-			(uuid "10fdc988-4918-4686-9fb0-4fb32029dbd5")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "R87")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
 		(at 166.37 35.56 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9849,150 +9496,6 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
 					(reference "R48")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 269.24 114.3 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6a390e6a-4dc1-4904-8414-5f6c99105099")
-		(property "Reference" "LED_48"
-			(at 268.732 110.998 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "White"
-			(at 267.6525 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_PLCC-2_3.4x3.0mm_AK"
-			(at 269.24 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 269.24 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 269.24 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C7371926"
-			(at 269.24 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "0d9523d4-2f9a-4319-8a45-4dcf9f18d473")
-		)
-		(pin "1"
-			(uuid "9eac0877-f168-4062-86e2-46514f1c0a34")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "LED_48")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 256.54 101.6 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6b907f08-cb46-4181-9f7e-bfc30950e79d")
-		(property "Reference" "R86"
-			(at 256.54 99.06 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "140R"
-			(at 256.54 101.6 90)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 256.54 103.378 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 256.54 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 256.54 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "d747f4c3-a4b9-467d-935d-65faf9b05ba4")
-		)
-		(pin "1"
-			(uuid "04ac243b-6fbb-42d7-8772-a9c09840c672")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "R86")
 					(unit 1)
 				)
 			)
@@ -10952,72 +10455,6 @@
 		)
 	)
 	(symbol
-		(lib_id "daisy_seed:3V3_D")
-		(at 278.13 114.3 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "8449ce10-7424-4e44-9419-46c3085c3725")
-		(property "Reference" "#PWR0114"
-			(at 281.94 115.57 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "5V"
-			(at 278.13 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 278.13 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 278.13 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 278.13 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1ac1c47d-97f3-4433-995d-0f6b4b832323")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "#PWR0114")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 167.64 114.3 90)
 		(unit 1)
@@ -11638,83 +11075,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 269.24 74.93 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8f020412-fbf0-4d6b-a10a-e94c575bb109")
-		(property "Reference" "LED_45"
-			(at 268.732 71.628 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "White"
-			(at 267.6525 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_PLCC-2_3.4x3.0mm_AK"
-			(at 269.24 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 269.24 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 269.24 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C7371926"
-			(at 269.24 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "334fa997-6863-4836-85dd-aafd05e1a24b")
-		)
-		(pin "1"
-			(uuid "29f63481-82a8-4efb-822f-c5b937726afd")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "LED_45")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 77.47 74.93 90)
 		(unit 1)
@@ -12062,83 +11422,6 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
 					(reference "LED_41")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 267.97 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "94dd87a6-66ea-40c9-a617-4906f4f0ab71")
-		(property "Reference" "LED_43"
-			(at 267.462 46.228 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "White"
-			(at 266.3825 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_PLCC-2_3.4x3.0mm_AK"
-			(at 267.97 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 267.97 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 267.97 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C7371926"
-			(at 267.97 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "37664d5e-ba4c-40dd-8f82-2bfdd931813e")
-		)
-		(pin "1"
-			(uuid "52a56354-5837-4db6-8f7d-74847bd28e16")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "LED_43")
 					(unit 1)
 				)
 			)
@@ -12707,83 +11990,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:LED")
-		(at 269.24 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9cf01eba-6a50-4e2d-9be8-1e3c796de439")
-		(property "Reference" "LED_46"
-			(at 268.732 85.598 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "White"
-			(at 267.6525 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_PLCC-2_3.4x3.0mm_AK"
-			(at 269.24 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 269.24 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 269.24 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C7371926"
-			(at 269.24 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "81b9f83a-e733-492f-8bd1-45b8dd22b17a")
-		)
-		(pin "1"
-			(uuid "0903fac4-1267-4627-b874-cbfb49b627c4")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "LED_46")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R")
 		(at 167.64 74.93 90)
 		(unit 1)
@@ -12845,150 +12051,6 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
 					(reference "R51")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 256.54 88.9 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a17834ac-bb63-42ae-8782-59168a975eac")
-		(property "Reference" "R85"
-			(at 256.54 86.36 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "140R"
-			(at 256.54 88.9 90)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 256.54 90.678 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 256.54 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 256.54 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "2b35c7d0-1d39-4013-8db3-8752b8de2dda")
-		)
-		(pin "1"
-			(uuid "f5edef18-c9b5-4a87-aff2-bbefba843295")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "R85")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
-		(at 267.97 63.5 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "a1a951c3-95e8-444c-88dd-55541abef33f")
-		(property "Reference" "LED_44"
-			(at 267.462 60.198 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "White"
-			(at 266.3825 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_PLCC-2_3.4x3.0mm_AK"
-			(at 267.97 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 267.97 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 267.97 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C7371926"
-			(at 267.97 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "af740514-8e94-4a1f-84aa-71c90ee9e758")
-		)
-		(pin "1"
-			(uuid "af4f71a6-1a97-4da5-957b-3465fc1af052")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "LED_44")
 					(unit 1)
 				)
 			)
@@ -13210,72 +12272,6 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
 					(reference "R89")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "daisy_seed:3V3_D")
-		(at 278.13 101.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "a4fc58d6-9419-462a-be81-5cc43fb627cd")
-		(property "Reference" "#PWR0113"
-			(at 281.94 102.87 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "5V"
-			(at 278.13 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 278.13 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 278.13 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 278.13 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9498ee11-578f-4625-8f61-813f50cdd1fa")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "#PWR0113")
 					(unit 1)
 				)
 			)
@@ -14467,72 +13463,6 @@
 		)
 	)
 	(symbol
-		(lib_id "daisy_seed:3V3_D")
-		(at 278.13 74.93 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "bf8711a7-a7e9-4f7d-8e20-a88a6080416b")
-		(property "Reference" "#PWR0111"
-			(at 281.94 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "5V"
-			(at 278.13 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 278.13 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 278.13 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 278.13 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "60243fed-989e-4f70-b968-0bcfda92dc3b")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "#PWR0111")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:LED")
 		(at 44.45 62.23 0)
 		(unit 1)
@@ -14880,72 +13810,6 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
 					(reference "#PWR046")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "daisy_seed:3V3_D")
-		(at 276.86 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "c8fb6c3a-58c5-4a3e-83c7-3596313afab0")
-		(property "Reference" "#PWR0109"
-			(at 280.67 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "5V"
-			(at 276.86 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 276.86 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 276.86 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 276.86 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d1253f79-7032-4e75-8fbf-a37dfa14e3af")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "#PWR0109")
 					(unit 1)
 				)
 			)
@@ -15445,73 +14309,6 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
 					(reference "C10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 256.54 49.53 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d7a2521a-51af-4b13-9e4b-33afbcbdfaa3")
-		(property "Reference" "R82"
-			(at 256.54 46.99 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "140R"
-			(at 256.54 49.53 90)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 256.54 51.308 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 256.54 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 256.54 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "da9d05d4-9085-46a1-97d8-b96db7acb79e")
-		)
-		(pin "1"
-			(uuid "46d75bc7-4768-41c9-8aaf-59105ca06550")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "R82")
 					(unit 1)
 				)
 			)
@@ -16701,72 +15498,6 @@
 		)
 	)
 	(symbol
-		(lib_id "daisy_seed:3V3_D")
-		(at 276.86 63.5 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ee799e25-0e1d-40c7-af63-a377254f329e")
-		(property "Reference" "#PWR0110"
-			(at 280.67 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "5V"
-			(at 276.86 59.69 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 276.86 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 276.86 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 276.86 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7b26d16d-6cae-440f-8735-0aec918467bc")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "#PWR0110")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:LED")
 		(at 87.63 21.59 0)
 		(unit 1)
@@ -17309,83 +16040,6 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 269.24 101.6 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fca136aa-266d-41a0-b67d-9bb847a5eb3d")
-		(property "Reference" "LED_47"
-			(at 268.732 98.298 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "White"
-			(at 267.6525 97.79 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "LED_SMD:LED_PLCC-2_3.4x3.0mm_AK"
-			(at 269.24 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 269.24 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Light emitting diode"
-			(at 269.24 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" "C7371926"
-			(at 269.24 101.6 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "3b29902e-7f96-41d0-b270-312c8a42ddde")
-		)
-		(pin "1"
-			(uuid "f241ddb7-c69c-46fd-ad8c-fb63f4911176")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "LED_47")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:LED")
 		(at 134.62 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -17610,73 +16264,6 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
 					(reference "LED_33")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 256.54 63.5 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fed04aaa-9e2c-441f-8422-9031c67edcfb")
-		(property "Reference" "R83"
-			(at 256.54 60.96 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "140R"
-			(at 256.54 63.5 90)
-			(effects
-				(font
-					(size 1.016 1.016)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
-			(at 256.54 65.278 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 256.54 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 256.54 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "1d597c3e-60be-4783-8aee-1177550b11e8")
-		)
-		(pin "1"
-			(uuid "48d3a807-6938-4d37-9692-5cafb8c75a86")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
-					(reference "R83")
 					(unit 1)
 				)
 			)
