@@ -1811,126 +1811,6 @@
 				)
 			)
 		)
-		(symbol "power:+3.3V"
-			(power)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+3.3V"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+3.3V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+3.3V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0) hide
-					(name "+3.3V"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "power:GND"
 			(power)
 			(pin_numbers hide)
@@ -4808,6 +4688,16 @@
 		)
 		(uuid "7dfe0ab2-9d9c-4f45-8d3e-b771adbb61ce")
 	)
+	(text "previously amp ratio  was 50R to 10K but no 50R stock. This is untested"
+		(exclude_from_sim no)
+		(at 68.326 83.058 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "b16ea1a6-c28f-4aae-bc9d-11e5509f9cca")
+	)
 	(text "mic max input ~3V"
 		(exclude_from_sim no)
 		(at 62.23 150.368 0)
@@ -6453,7 +6343,7 @@
 				)
 			)
 		)
-		(property "Value" "50R"
+		(property "Value" "75R"
 			(at 62.23 165.1 90)
 			(effects
 				(font
@@ -7199,72 +7089,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 81.28 29.21 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "5f935cff-4179-435c-975e-3a7e169a52ec")
-		(property "Reference" "#PWR03"
-			(at 81.28 33.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 81.28 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 81.28 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 81.28 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 81.28 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c99570c6-27bd-4313-9d92-7538dd006a63")
-		)
-		(instances
-			(project "soundpad"
-				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
-					(reference "#PWR03")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Connector_Audio:AudioJack3")
 		(at 39.37 45.72 0)
 		(unit 1)
@@ -7352,7 +7176,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "15K"
 			(at 78.74 95.25 90)
 			(effects
 				(font
@@ -7856,6 +7680,72 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
 					(reference "#PWR078")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "daisy_seed:3V3_A")
+		(at 81.28 29.21 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "74e06fc5-b9ef-4e8c-a69c-ba5311225ff5")
+		(property "Reference" "#PWR03"
+			(at 81.28 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "3V3_A"
+			(at 81.28 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 81.28 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 81.28 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"3V3_A\" (I hope)"
+			(at 81.28 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3e63c479-abec-4efb-a2c2-fb00286087d2")
+		)
+		(instances
+			(project "soundpad_economy"
+				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -9739,7 +9629,7 @@
 				)
 			)
 		)
-		(property "Value" "50R"
+		(property "Value" "75R"
 			(at 62.23 107.95 90)
 			(effects
 				(font
@@ -10186,7 +10076,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "15K"
 			(at 78.74 152.4 90)
 			(effects
 				(font
@@ -10468,6 +10358,10 @@
 		(instances
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
+					(reference "R6")
+					(unit 1)
+				)
+				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/9194bf31-8079-4b2f-befe-901822c457d4"
 					(reference "R6")
 					(unit 1)
 				)

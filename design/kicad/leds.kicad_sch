@@ -3863,6 +3863,16 @@
 		)
 		(uuid "c525d738-f041-422a-a2e7-85b4fbb9f0da")
 	)
+	(text "was 140R for all LED resistors but not in stock"
+		(exclude_from_sim no)
+		(at 36.576 121.92 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "50df1f34-033e-4403-b0e2-06a468f2e0cc")
+	)
 	(text "Only buttons that can be latched need LEDS, this includes all mod buttons and discludes Empty and Settings. \nBut since there are 16 leds for buttons plus 16 more for modes and side buttons, conservation of leds can be thrown out\nas a 3rd chip is then required. So no conservation of leds necessary"
 		(exclude_from_sim no)
 		(at 222.758 125.476 0)
@@ -5496,7 +5506,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 123.19 49.53 90)
 			(effects
 				(font
@@ -5523,6 +5533,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 123.19 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 123.19 49.53 0)
 			(effects
 				(font
@@ -5640,7 +5659,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 214.63 62.23 90)
 			(effects
 				(font
@@ -5667,6 +5686,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 214.63 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 214.63 62.23 0)
 			(effects
 				(font
@@ -6611,7 +6639,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 214.63 49.53 90)
 			(effects
 				(font
@@ -6638,6 +6666,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 214.63 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 214.63 49.53 0)
 			(effects
 				(font
@@ -6717,7 +6754,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2688894"
+		(property "LCSC" "C2678753"
 			(at 172.72 162.56 0)
 			(effects
 				(font
@@ -6902,7 +6939,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 214.63 88.9 90)
 			(effects
 				(font
@@ -6929,6 +6966,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 214.63 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 214.63 88.9 0)
 			(effects
 				(font
@@ -7008,7 +7054,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2688894"
+		(property "LCSC" "C2678753"
 			(at 107.95 162.56 0)
 			(effects
 				(font
@@ -7270,7 +7316,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 123.19 113.03 90)
 			(effects
 				(font
@@ -7297,6 +7343,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 123.19 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 123.19 113.03 0)
 			(effects
 				(font
@@ -7337,7 +7392,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 123.19 62.23 90)
 			(effects
 				(font
@@ -7364,6 +7419,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 123.19 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 123.19 62.23 0)
 			(effects
 				(font
@@ -7536,7 +7600,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 214.63 100.33 90)
 			(effects
 				(font
@@ -7563,6 +7627,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 214.63 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 214.63 100.33 0)
 			(effects
 				(font
@@ -8318,7 +8391,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 33.02 35.56 90)
 			(effects
 				(font
@@ -8345,6 +8418,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 33.02 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 33.02 35.56 0)
 			(effects
 				(font
@@ -8424,7 +8506,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2688894"
+		(property "LCSC" "C2678753"
 			(at 45.72 163.83 0)
 			(effects
 				(font
@@ -8543,7 +8625,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 123.19 100.33 90)
 			(effects
 				(font
@@ -8570,6 +8652,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 123.19 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 123.19 100.33 0)
 			(effects
 				(font
@@ -8676,7 +8767,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 33.02 88.9 90)
 			(effects
 				(font
@@ -8703,6 +8794,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 33.02 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 33.02 88.9 0)
 			(effects
 				(font
@@ -8743,7 +8843,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 77.47 88.9 90)
 			(effects
 				(font
@@ -8770,6 +8870,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 77.47 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 77.47 88.9 0)
 			(effects
 				(font
@@ -8887,7 +8996,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 33.02 113.03 90)
 			(effects
 				(font
@@ -8914,6 +9023,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 33.02 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 33.02 113.03 0)
 			(effects
 				(font
@@ -9031,7 +9149,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 256.54 35.56 90)
 			(effects
 				(font
@@ -9058,6 +9176,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 256.54 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 256.54 35.56 0)
 			(effects
 				(font
@@ -9175,7 +9302,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 76.2 49.53 90)
 			(effects
 				(font
@@ -9202,6 +9329,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 76.2 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 76.2 49.53 0)
 			(effects
 				(font
@@ -9451,7 +9587,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 166.37 35.56 90)
 			(effects
 				(font
@@ -9478,6 +9614,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 166.37 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 166.37 35.56 0)
 			(effects
 				(font
@@ -9518,7 +9663,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 123.19 21.59 90)
 			(effects
 				(font
@@ -9545,6 +9690,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 123.19 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 123.19 21.59 0)
 			(effects
 				(font
@@ -9651,7 +9805,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 33.02 62.23 90)
 			(effects
 				(font
@@ -9678,6 +9832,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 33.02 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 33.02 62.23 0)
 			(effects
 				(font
@@ -9718,7 +9881,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 33.02 76.2 90)
 			(effects
 				(font
@@ -9745,6 +9908,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 33.02 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 33.02 76.2 0)
 			(effects
 				(font
@@ -9917,7 +10089,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 256.54 21.59 90)
 			(effects
 				(font
@@ -9944,6 +10116,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 256.54 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 256.54 21.59 0)
 			(effects
 				(font
@@ -10061,7 +10242,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 166.37 49.53 90)
 			(effects
 				(font
@@ -10088,6 +10269,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 166.37 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 166.37 49.53 0)
 			(effects
 				(font
@@ -10194,7 +10384,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 167.64 101.6 90)
 			(effects
 				(font
@@ -10221,6 +10411,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 167.64 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 167.64 101.6 0)
 			(effects
 				(font
@@ -10327,7 +10526,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 76.2 21.59 90)
 			(effects
 				(font
@@ -10354,6 +10553,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 76.2 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 76.2 21.59 0)
 			(effects
 				(font
@@ -10471,7 +10679,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 167.64 114.3 90)
 			(effects
 				(font
@@ -10498,6 +10706,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 167.64 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 167.64 114.3 0)
 			(effects
 				(font
@@ -10670,7 +10887,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 166.37 63.5 90)
 			(effects
 				(font
@@ -10697,6 +10914,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 166.37 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 166.37 63.5 0)
 			(effects
 				(font
@@ -10737,7 +10963,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 123.19 76.2 90)
 			(effects
 				(font
@@ -10764,6 +10990,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 123.19 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 123.19 76.2 0)
 			(effects
 				(font
@@ -11091,7 +11326,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 77.47 74.93 90)
 			(effects
 				(font
@@ -11118,6 +11353,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 77.47 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 77.47 74.93 0)
 			(effects
 				(font
@@ -11939,7 +12183,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 167.64 88.9 90)
 			(effects
 				(font
@@ -11966,6 +12210,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 167.64 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 167.64 88.9 0)
 			(effects
 				(font
@@ -12006,7 +12259,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 167.64 74.93 90)
 			(effects
 				(font
@@ -12033,6 +12286,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 167.64 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 167.64 74.93 0)
 			(effects
 				(font
@@ -12792,7 +13054,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 33.02 21.59 90)
 			(effects
 				(font
@@ -12819,6 +13081,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 33.02 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 33.02 21.59 0)
 			(effects
 				(font
@@ -13003,7 +13274,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 76.2 35.56 90)
 			(effects
 				(font
@@ -13030,6 +13301,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 76.2 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 76.2 35.56 0)
 			(effects
 				(font
@@ -13346,7 +13626,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 214.63 21.59 90)
 			(effects
 				(font
@@ -13373,6 +13653,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 214.63 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 214.63 21.59 0)
 			(effects
 				(font
@@ -13699,7 +13988,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 214.63 113.03 90)
 			(effects
 				(font
@@ -13726,6 +14015,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 214.63 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 214.63 113.03 0)
 			(effects
 				(font
@@ -13832,7 +14130,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 214.63 35.56 90)
 			(effects
 				(font
@@ -13859,6 +14157,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 214.63 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 214.63 35.56 0)
 			(effects
 				(font
@@ -14119,7 +14426,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 76.2 63.5 90)
 			(effects
 				(font
@@ -14146,6 +14453,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 76.2 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 76.2 63.5 0)
 			(effects
 				(font
@@ -14331,7 +14647,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 77.47 101.6 90)
 			(effects
 				(font
@@ -14358,6 +14674,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 77.47 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 77.47 101.6 0)
 			(effects
 				(font
@@ -14607,7 +14932,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 77.47 114.3 90)
 			(effects
 				(font
@@ -14634,6 +14959,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 77.47 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 77.47 114.3 0)
 			(effects
 				(font
@@ -14674,7 +15008,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 123.19 35.56 90)
 			(effects
 				(font
@@ -14701,6 +15035,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 123.19 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 123.19 35.56 0)
 			(effects
 				(font
@@ -14807,7 +15150,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 123.19 88.9 90)
 			(effects
 				(font
@@ -14834,6 +15177,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 123.19 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 123.19 88.9 0)
 			(effects
 				(font
@@ -15083,7 +15435,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 166.37 21.59 90)
 			(effects
 				(font
@@ -15110,6 +15462,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 166.37 21.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 166.37 21.59 0)
 			(effects
 				(font
@@ -15293,7 +15654,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 33.02 49.53 90)
 			(effects
 				(font
@@ -15320,6 +15681,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 33.02 49.53 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 33.02 49.53 0)
 			(effects
 				(font
@@ -15723,7 +16093,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 214.63 76.2 90)
 			(effects
 				(font
@@ -15750,6 +16120,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 214.63 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 214.63 76.2 0)
 			(effects
 				(font
@@ -15922,7 +16301,7 @@
 				)
 			)
 		)
-		(property "Value" "140R"
+		(property "Value" "150R"
 			(at 33.02 100.33 90)
 			(effects
 				(font
@@ -15949,6 +16328,15 @@
 			)
 		)
 		(property "Description" "Resistor"
+			(at 33.02 100.33 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C22808"
 			(at 33.02 100.33 0)
 			(effects
 				(font
