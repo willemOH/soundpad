@@ -19,7 +19,6 @@
 using namespace daisy;
 using namespace daisysp;
 
-//#define LOGG // start serial over USB Logger class
 //#define MEASURE // measure MCU utilization
 
 DaisySeed hardware;
@@ -116,7 +115,11 @@ int main(void)
 	// logging over serial USB
 	#ifdef LOGG
 	hardware.StartLog(true); // start log but don't wait for PC - we can be connected to a battery
-	hardware.PrintLine("monitoring started");
+	hardware.PrintLine("monitoring started:");
+	mLog(GENERAL, "general");
+	mLog(BUTTON, "button");
+	mLog(AUDIO, "audio");
+	mLog(SD_CARD, "sd card");
 	#endif
 	
 	//sGate = false;
@@ -127,15 +130,15 @@ int main(void)
     sd_cfg.Defaults();
     if (sdcard.Init(sd_cfg) != SdmmcHandler::Result::OK)
     {
-        hardware.PrintLine("SD card initialization failed");
+        mLog(SD_CARD,"SD card initialization failed");
     }
     if (fsi.Init(FatFSInterface::Config::MEDIA_SD) != FatFSInterface::Result::OK)
     {
-        hardware.PrintLine("File system initialization failed");
+		mLog(SD_CARD, "File system initialization failed");
     }
     if (f_mount(&fsi.GetSDFileSystem(), "/", 1) != FR_OK)
     {
-        hardware.PrintLine("File system mount failed");
+        mLog(SD_CARD, "File system mount failed");
     }
     //sampler.Init(fsi.GetSDPath());
 	System::Delay(100);
@@ -154,9 +157,6 @@ int main(void)
     //update loop
     for(;;)
     { 
-		#ifdef LOGG
-		//PrintDebugInfo();
-		#endif
 		controls.UpdateControlStates();
 		sample.WriteProcess();
         System::Delay(1);

@@ -3,6 +3,7 @@
 #include "daisy_seed.h"
 #include "sp_ui.h" // Include the UI header directly
 #include <vector>
+#include "global.h"
 
 using namespace daisy;
 

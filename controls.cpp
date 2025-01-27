@@ -9,10 +9,10 @@ void Controls::Init(SPUI* uiInstance){
     hardware.adc.Init(adcConfig, 4);
     hardware.adc.Start();
     if (i2c_transport.Init(config.transport_config)){
-        hardware.PrintLine("I2C Transport Initialization Failed");
+        mLog(ALL,"I2C Transport Initialization Failed");
     }
     if (mpr121.Init(config) != Mpr121<Mpr121I2CTransport>::Result::OK){
-        hardware.PrintLine("MPR121 Initialization Failed");
+        mLog(BUTTON, "MPR121 Initialization Failed");
     }
 }
 
@@ -54,15 +54,6 @@ void Controls::UpdateControlStates() {
             //hardware.PrintLine("pressedButtonsState: [%d,%d]", pressedButtons[0], pressedButtons[1]);
             old_status = buttonsState;
         }
-    #ifdef LOGG
-    if(edge){
-    // Print the contents of pressedButtons
-    hardware.PrintLine("Contents of pressedButtons:");
-    for (size_t i = 0; i < pressedButtons.size(); i++) {
-        hardware.PrintLine("pressedButtons[%u] = %u", static_cast<unsigned int>(i), static_cast<unsigned int>(pressedButtons[i]));
-    }
-    }
-    #endif
     // Directly calls UI method with the pressed buttons list
     ui->Update(pressedButtons, pot1, pot2, pot3, pot4, potTrigs);
     potTrigs = {false, false, false, false};
@@ -75,7 +66,7 @@ void Controls::processNewButtonsState(uint16_t buttonsState)
         if(!buttonsState){ //clear stuck buttons, if function tries to remove a stuck button, it gets bad, so check first
             pressedButtons[0] = 0;
             pressedButtons[1] = 0;
-            hardware.PrintLine("stuck button cleared");
+            mLog(BUTTON, "stuck button cleared");
         }
         else if(change & oldButtonsState){ //change is subtraction
             RemoveButton(LSSBtoButton(change));
@@ -100,8 +91,8 @@ void Controls::RemoveButton(uint8_t button){
         pressedButtons[1] = 0;
     }
     else{
-        hardware.PrintLine("remove Button error: button %d not found in pressedButtons", button);
-        hardware.PrintLine("pressedButtons[0]: %d, pressedButtons[1]: %d", pressedButtons[0], pressedButtons[1]);
+        mLog(BUTTON, "remove Button error: button %d not found in pressedButtons", button);
+        mLog(BUTTON, "pressedButtons[0]: %d, pressedButtons[1]: %d", pressedButtons[0], pressedButtons[1]);
         }
 }
 
@@ -113,8 +104,8 @@ void Controls::AddButton(uint8_t button){
         pressedButtons[1] = button; 
     }
     else{
-        hardware.PrintLine("add Button error: both positions in pressedButtons are occupied");
-        hardware.PrintLine("pressedButtons[0]: %d, pressedButtons[1]: %d", pressedButtons[0], pressedButtons[1]);
+        mLog(BUTTON, "add Button error: both positions in pressedButtons are occupied");
+        mLog(BUTTON, "pressedButtons[0]: %d, pressedButtons[1]: %d", pressedButtons[0], pressedButtons[1]);
         }
 }
 
@@ -124,6 +115,6 @@ uint8_t Controls::LSSBtoButton(uint16_t number) {
             return i + 1;
         }
     }
-    hardware.PrintLine("no bits set, LSSB error");
+    mLog(BUTTON, "no bits set, LSSB error");
     return 0; // Return -1 if no bits are set
 }
