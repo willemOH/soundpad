@@ -3501,7 +3501,7 @@
 	)
 	(wire
 		(pts
-			(xy 247.65 58.42) (xy 259.08 58.42)
+			(xy 247.65 63.5) (xy 251.46 63.5)
 		)
 		(stroke
 			(width 0)
@@ -3571,6 +3571,16 @@
 	)
 	(wire
 		(pts
+			(xy 261.62 58.42) (xy 261.62 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3b17dbe1-fb2d-4993-9963-1017545a4405")
+	)
+	(wire
+		(pts
 			(xy 78.74 99.06) (xy 82.55 99.06)
 		)
 		(stroke
@@ -3628,6 +3638,16 @@
 			(type default)
 		)
 		(uuid "43958305-d2a1-42cc-a843-c92086f39fe6")
+	)
+	(wire
+		(pts
+			(xy 208.28 48.26) (xy 208.28 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "467b206e-a5d3-407c-850e-113d0255f084")
 	)
 	(wire
 		(pts
@@ -4271,6 +4291,16 @@
 	)
 	(wire
 		(pts
+			(xy 247.65 63.5) (xy 247.65 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b567caea-2b06-4771-bef3-96068f1524b2")
+	)
+	(wire
+		(pts
 			(xy 53.34 91.44) (xy 58.42 91.44)
 		)
 		(stroke
@@ -4411,6 +4441,16 @@
 	)
 	(wire
 		(pts
+			(xy 254 55.88) (xy 247.65 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "df5c03d6-d982-43d3-a873-11aa23efd550")
+	)
+	(wire
+		(pts
 			(xy 78.74 91.44) (xy 82.55 91.44)
 		)
 		(stroke
@@ -4458,6 +4498,16 @@
 			(type default)
 		)
 		(uuid "e71005bf-485b-4b37-abe3-3bc9bd4ab924")
+	)
+	(wire
+		(pts
+			(xy 224.79 48.26) (xy 215.9 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e891a7f0-0145-4372-b4cd-8b99837f2fec")
 	)
 	(wire
 		(pts
@@ -4538,6 +4588,16 @@
 			(type default)
 		)
 		(uuid "f257e36e-0ee0-4d25-a2ee-8a983598f6ae")
+	)
+	(wire
+		(pts
+			(xy 254 58.42) (xy 254 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f3f0a4dd-b59f-427f-90d9-589ca6b11235")
 	)
 	(wire
 		(pts
@@ -6015,6 +6075,73 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
 					(reference "#PWR017")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 212.09 48.26 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "25df4d19-2b40-4ea3-90b7-69781d715c34")
+		(property "Reference" "R13"
+			(at 212.09 50.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 212.09 48.26 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 212.09 46.482 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 212.09 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 212.09 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "602a4c04-f067-4c2c-8d70-6fbd945859fd")
+		)
+		(pin "1"
+			(uuid "2305e396-37a2-4726-b97e-4c0675124dee")
+		)
+		(instances
+			(project "soundpad_economy"
+				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -9014,6 +9141,72 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 208.28 52.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d341f5dc-6615-4d14-b4b9-5e72e0f4410c")
+		(property "Reference" "#PWR016"
+			(at 208.28 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 208.28 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 208.28 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 208.28 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 208.28 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4aa7618c-0d1f-4e0b-931a-ae6d2f4d9370")
+		)
+		(instances
+			(project "soundpad_economy"
+				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
+					(reference "#PWR016")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 78.74 129.54 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9239,6 +9432,73 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R")
+		(at 257.81 58.42 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "db7cfb96-9d9e-4053-8140-872e1e1fd5e0")
+		(property "Reference" "R14"
+			(at 257.81 60.96 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "5.1k"
+			(at 257.81 58.42 90)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+			(at 257.81 56.642 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 257.81 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor"
+			(at 257.81 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "65c26a51-173d-4b2d-a667-dee1fab9e6df")
+		)
+		(pin "1"
+			(uuid "a708596b-ac28-4fb0-9985-cef690f523a3")
+		)
+		(instances
+			(project "soundpad_economy"
+				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "daisy_seed:3V3_A")
 		(at 58.42 91.44 0)
 		(unit 1)
@@ -9306,16 +9566,15 @@
 	)
 	(symbol
 		(lib_id "daisy_seed:3V3_D")
-		(at 259.08 58.42 0)
+		(at 251.46 63.5 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "dfcf3f01-a76e-4711-88dd-ca4f75d4a4af")
 		(property "Reference" "#PWR024"
-			(at 262.89 59.69 0)
+			(at 255.27 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9324,7 +9583,7 @@
 			)
 		)
 		(property "Value" "5V"
-			(at 259.08 54.61 0)
+			(at 251.46 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9332,7 +9591,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 259.08 58.42 0)
+			(at 251.46 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9341,7 +9600,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 259.08 58.42 0)
+			(at 251.46 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9350,7 +9609,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 259.08 58.42 0)
+			(at 251.46 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9674,6 +9933,72 @@
 			(project "soundpad"
 				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
 					(reference "R66")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 261.62 62.23 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e4cfd369-afc5-490e-92fd-b52f03f46675")
+		(property "Reference" "#PWR023"
+			(at 261.62 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 261.62 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 261.62 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 261.62 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 261.62 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "215295e6-ff83-4438-a462-ed8557222b96")
+		)
+		(instances
+			(project "soundpad_economy"
+				(path "/e7f7d9eb-c978-4dc1-9b91-2f2a4525cbe7/1fe70b28-8b31-4106-8d94-8f01409bdfba"
+					(reference "#PWR023")
 					(unit 1)
 				)
 			)
