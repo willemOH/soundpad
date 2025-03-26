@@ -433,6 +433,352 @@
 			)
 		)
 	)
+	(symbol "H11L1S(TA)"
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(property "Reference" "U"
+			(at 0 10.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "H11L1S(TA)"
+			(at 0 -10.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "H11L1S:SMD-6_L7.3-W6.5-P2.54-LS10.2-BL"
+			(at 0 -12.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/SMD-Optocouplers_H11L1S-TA_C78589.html"
+			(at 0 -15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 0 0 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C78589"
+			(at 0 -17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(symbol "H11L1S(TA)_0_1"
+			(rectangle
+				(start -7.62 7.62)
+				(end 7.62 -7.62)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(arc
+				(start -3.56 1.02)
+				(mid -2.0679 2.54)
+				(end -3.56 4.06)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.76 -3.56) (xy -2.03 -1.52)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 -4.06) (xy -3.81 -4.06)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0.51 -1.52) (xy 1.27 -1.27)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 4.83 -1.78) (xy 2.29 -1.78)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -7.62 -5.08) (xy -1.27 -5.08) (xy -1.27 -4.06)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -3.3 -1.52) (xy -3.05 -1.52) (xy -2.03 -1.52)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -1.27 -1.02) (xy -1.27 0) (xy -7.62 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 0 -4.06) (xy 0 -1.02) (xy -3.81 -1.02)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -5.08 -2.54) (xy -6.35 -2.54) (xy -6.35 5.08) (xy -7.62 5.08)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy -0.51 -3.56) (xy -1.78 -3.56) (xy -3.05 -1.52) (xy -3.3 -1.52)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 4.83 -3.56) (xy 2.29 -3.56) (xy 3.56 -1.78) (xy 4.83 -3.56)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type background)
+				)
+			)
+			(polyline
+				(pts
+					(xy 7.62 -5.08) (xy 3.56 -5.08) (xy 3.56 0) (xy 7.62 0)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(polyline
+				(pts
+					(xy 2.29 -4.83) (xy 0.51 -4.32) (xy 2.29 -2.03) (xy 0.51 -1.52) (xy 1.02 -2.03)
+				)
+				(stroke
+					(width 0)
+					(type default)
+				)
+				(fill
+					(type none)
+				)
+			)
+			(pin unspecified line
+				(at 12.7 -5.08 180)
+				(length 5.08)
+				(name "AN"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "1"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin unspecified line
+				(at 12.7 0 180)
+				(length 5.08)
+				(name "CAT"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "2"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin unspecified line
+				(at 12.7 5.08 180)
+				(length 5.08)
+				(name "NC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "3"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin unspecified line
+				(at -12.7 5.08 0)
+				(length 5.08)
+				(name "VO"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "4"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin unspecified line
+				(at -12.7 0 0)
+				(length 5.08)
+				(name "GND"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "5"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+			(pin unspecified line
+				(at -12.7 -5.08 0)
+				(length 5.08)
+				(name "VCC"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+				(number "6"
+					(effects
+						(font
+							(size 1.27 1.27)
+						)
+					)
+				)
+			)
+		)
+	)
 	(symbol "TF-CARDH1.8"
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -1218,178 +1564,4 @@
 			)
 		)
 	)
-)
-  (symbol "TYPE-C-31-M-12"
-    (in_bom yes)
-    (on_board yes)
-    (property
-      "Reference"
-      "USBC"
-      (id 0)
-      (at 0 26.67 0)
-      (effects (font (size 1.27 1.27) ) )
-    )
-    (property
-      "Value"
-      "TYPE-C-31-M-12"
-      (id 1)
-      (at 0 -26.67 0)
-      (effects (font (size 1.27 1.27) ) )
-    )
-    (property
-      "Footprint"
-      "soundpad_library:USB-C_SMD-TYPE-C-31-M-12"
-      (id 2)
-      (at 0 -29.21 0)
-      (effects (font (size 1.27 1.27) ) hide)
-    )
-    (property
-      "Datasheet"
-      "https://lcsc.com/product-detail/USB-Type-C_Korean-Hroparts-Elec-TYPE-C-31-M-12_C165948.html"
-      (id 3)
-      (at 0 -31.75 0)
-      (effects (font (size 1.27 1.27) ) hide)
-    )
-    (property
-      "LCSC Part"
-      "C165948"
-      (id 5)
-      (at 0 -34.29 0)
-      (effects (font (size 1.27 1.27) ) hide)
-    )
-    (symbol "TYPE-C-31-M-12_0_1"
-      (rectangle
-        (start -8.89 16.51)
-        (end 8.89 -16.51)
-        (stroke (width 0) (type default) (color 0 0 0 0))
-        (fill (type background))
-      )
-      (circle
-        (center -7.62 15.24)
-        (radius 0.38)
-        (stroke (width 0) (type default) (color 0 0 0 0))
-        (fill (type none))
-      )
-      (pin unspecified line
-        (at -11.43 13.97 0)
-        (length 2.54)
-        (name "GND" (effects (font (size 1.27 1.27))))
-        (number "B1" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at -11.43 6.35 0)
-        (length 2.54)
-        (name "VBUS" (effects (font (size 1.27 1.27))))
-        (number "B4" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at -11.43 3.81 0)
-        (length 2.54)
-        (name "CC2" (effects (font (size 1.27 1.27))))
-        (number "B5" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at -11.43 1.27 0)
-        (length 2.54)
-        (name "DP2" (effects (font (size 1.27 1.27))))
-        (number "B6" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at -11.43 -1.27 0)
-        (length 2.54)
-        (name "DN2" (effects (font (size 1.27 1.27))))
-        (number "B7" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at -11.43 -3.81 0)
-        (length 2.54)
-        (name "SBU2" (effects (font (size 1.27 1.27))))
-        (number "B8" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at -11.43 -6.35 0)
-        (length 2.54)
-        (name "VBUS" (effects (font (size 1.27 1.27))))
-        (number "B9" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at -11.43 -13.97 0)
-        (length 2.54)
-        (name "GND" (effects (font (size 1.27 1.27))))
-        (number "B12" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at -1.27 21.59 270)
-        (length 5.08)
-        (name "SH" (effects (font (size 1.27 1.27))))
-        (number "0" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at 1.27 21.59 270)
-        (length 5.08)
-        (name "SH" (effects (font (size 1.27 1.27))))
-        (number "0" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at -1.27 -21.59 90)
-        (length 5.08)
-        (name "SH" (effects (font (size 1.27 1.27))))
-        (number "0" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at 1.27 -21.59 90)
-        (length 5.08)
-        (name "SH" (effects (font (size 1.27 1.27))))
-        (number "0" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at 11.43 -13.97 180)
-        (length 2.54)
-        (name "GND" (effects (font (size 1.27 1.27))))
-        (number "A1" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at 11.43 -6.35 180)
-        (length 2.54)
-        (name "VBUS" (effects (font (size 1.27 1.27))))
-        (number "A4" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at 11.43 -3.81 180)
-        (length 2.54)
-        (name "CC1" (effects (font (size 1.27 1.27))))
-        (number "A5" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at 11.43 -1.27 180)
-        (length 2.54)
-        (name "DP1" (effects (font (size 1.27 1.27))))
-        (number "A6" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at 11.43 1.27 180)
-        (length 2.54)
-        (name "DN1" (effects (font (size 1.27 1.27))))
-        (number "A7" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at 11.43 3.81 180)
-        (length 2.54)
-        (name "SBU1" (effects (font (size 1.27 1.27))))
-        (number "A8" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at 11.43 6.35 180)
-        (length 2.54)
-        (name "VBUS" (effects (font (size 1.27 1.27))))
-        (number "A9" (effects (font (size 1.27 1.27))))
-      )
-      (pin unspecified line
-        (at 11.43 13.97 180)
-        (length 2.54)
-        (name "GND" (effects (font (size 1.27 1.27))))
-        (number "A12" (effects (font (size 1.27 1.27))))
-      )
-    )
-  )
 )

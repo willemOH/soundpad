@@ -1,4 +1,81 @@
-23767785454290741
+23835655070769005
+Adafruit USB LiIon-LiPoly Charger
+1X02_OVAL
+PIN HEADER
+
+0
+2
+2
+Adafruit USB LiIon-LiPoly Charger
+0805
+0805 (2012 Metric)
+
+0
+2
+2
+Adafruit USB LiIon-LiPoly Charger
+0805-THM
+
+
+0
+2
+2
+Adafruit USB LiIon-LiPoly Charger
+ADAFRUIT200MIL
+
+
+0
+0
+0
+Adafruit USB LiIon-LiPoly Charger
+CHIPLED_0805
+CHIPLED 0805
+
+0
+2
+2
+Adafruit USB LiIon-LiPoly Charger
+DFN10_3X3MM
+10-Lead 3.3mm DFN{return}{return}Source: http://ww1.microchip.com/downloads/en/DeviceDoc/22005b.pdf
+
+0
+11
+11
+Adafruit USB LiIon-LiPoly Charger
+FIDUCIAL-1X2.5
+
+
+0
+1
+1
+Adafruit USB LiIon-LiPoly Charger
+JSTPH2
+2-Pin JST PH Series Right-Angle Connector (+/- for batteries)
+
+0
+4
+4
+Adafruit USB LiIon-LiPoly Charger
+MOUNTINGHOLE_2.0_PLATED
+
+
+0
+1
+1
+Adafruit USB LiIon-LiPoly Charger
+R0805
+RESISTOR{return}{return}chip
+
+0
+2
+2
+Adafruit USB LiIon-LiPoly Charger
+USB-MINIB_LARGER
+
+
+0
+9
+9
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -6431,6 +6508,48 @@ Tantalum Capacitor SMD AVX-U (7361-438 Metric), IPC_7351 nominal, (Body size fro
 capacitor tantalum
 0
 2
+2
+CherryMX
+Cherry-MX-RGB
+
+
+0
+6
+6
+CherryMX
+Cherry-MX-RGB-0603
+
+
+0
+6
+4
+CherryMX
+Cherry-MX-RGB-LED
+
+
+0
+4
+4
+CherryMX
+Kailh-socket
+
+
+0
+2
+2
+CherryMX
+Kailh-socket-P50-Q1-probe
+
+
+0
+2
+2
+CherryMX
+Kailh-socket-mirrorable
+
+
+0
+6
 2
 Connector
 Banana_Cliff_FCR7350B_S16N-PC_Horizontal
@@ -57833,6 +57952,34 @@ heatsink
 0
 0
 0
+ICs
+H11L1STA_EVE
+
+H11L1STA 
+0
+6
+6
+ICs
+H11L1STA_EVE-L
+
+H11L1STA 
+0
+6
+6
+ICs
+H11L1STA_EVE-M
+
+H11L1STA 
+0
+6
+6
+ICs
+SMD-6_L7.3-W6.5-P2.54-LS10.2-BL
+
+
+0
+6
+6
 Inductor_SMD
 L_6.3x6.3_H3
 Choke, SMD, 6.3x6.3mm 3mm height
@@ -79807,6 +79954,13 @@ SOIC SO
 8
 8
 Package_SO
+SOIC-8_3.9x4.9mm_P1.27mm_hand_solder
+SOIC, 8 Pin (JEDEC MS-012AA, https://www.analog.com/media/en/package-pcb-resources/package/pkg_pdf/soic_narrow-r/r_8.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOIC SO
+0
+8
+8
+Package_SO
 SOIC-8_5.23x5.23mm_P1.27mm
 SOIC, 8 Pin (http://www.winbond.com/resource-files/w25q32jv%20revg%2003272018%20plus.pdf#page=68), generated with kicad-footprint-generator ipc_gullwing_generator.py
 SOIC SO
@@ -81124,6 +81278,13 @@ HSOP 1.27
 9
 Package_SO
 Texas_HTSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.95x4.9mm_Mask2.4x3.1mm_ThermalVias
+8-pin HTSOP package with 1.27mm pin pitch, compatible with SOIC-8, 3.9x4.9mm body, exposed pad, thermal vias, http://www.ti.com/lit/ds/symlink/drv8870.pdf
+HTSOP 1.27
+0
+18
+9
+Package_SO
+Texas_HTSOP-8-1EP_3.9x4.9mm_P1.27mm_EP2.95x4.9mm_Mask2.4x3.1mm_ThermalVias_1
 8-pin HTSOP package with 1.27mm pin pitch, compatible with SOIC-8, 3.9x4.9mm body, exposed pad, thermal vias, http://www.ti.com/lit/ds/symlink/drv8870.pdf
 HTSOP 1.27
 0
@@ -96635,6 +96796,20 @@ Varistor VF
 2
 2
 connectors
+AUDIO-TH_PJ-320A
+
+
+0
+6
+4
+connectors
+PJ-376M_TRS_3.5mm
+
+
+0
+3
+3
+connectors
 USB-C-SMD_TYPE-602-T3
 
 
@@ -96649,33 +96824,26 @@ microSD_TF-SMD_TF-CARD-H1.8
 15
 13
 footprints
+2479
+2479
+Undefined or Miscellaneous
+0
+4
+4
+footprints
+AOM5024PHDMBR
+AOM-5024P-HD-MB-R-4
+Microphone
+0
+2
+2
+footprints
 CUI_SJ1-3553NG
 
 
 0
 3
 3
-footprints
-H11L1STA_EVE
-
-H11L1STA 
-0
-6
-6
-footprints
-RK10J12E0A0A
-RK10J12E0A0A-1
-Variable Resistor
-0
-7
-7
-footprints
-RK10J12R0A0B
-RK10J12R0A0B-1
-Variable Resistor
-0
-9
-9
 footprints
 SC-1009G
 
@@ -96684,19 +96852,82 @@ SC-1009G
 12
 12
 footprints
+SLW12777443AND
+SLW-1277744-3A-N-D-3
+Switch
+0
+5
+5
+footprints
+SW_100SP1T1B4M2QE
+
+
+0
+3
+3
+potentiometers
+PS1511PC1BR100K
+PS15-11PC1BR100K-3
+Variable Resistor
+0
+7
+7
+potentiometers
+PS2011PC1AR10K
+PS20-11PC1AR10K-1
+Variable Resistor
+0
+7
+7
+potentiometers
+PS3010MC1BR10K
+PS30-10MC1BR10K-1
+Variable Resistor
+0
+7
+7
+potentiometers
+PS6010MC1BR10K
+PS60-10MC1BR10K-1
+Variable Resistor
+0
+7
+7
+potentiometers
+RK10J12E0A0A
+RK10J12E0A0A-1
+Variable Resistor
+0
+7
+7
+potentiometers
+RK10J12R0A0B
+RK10J12R0A0B-1
+Variable Resistor
+0
+9
+9
+potentiometers
 TRIM_PS100-1B1BR10K
 
 
 0
 9
 9
-footprints
+potentiometers
 TRIM_RV09AF-40-20K-A10K
 
 
 0
 5
 5
+soundpad_library
+3PDT Prongs
+
+
+0
+9
+9
 soundpad_library
 AOM-5024L-HD-R
 
@@ -96712,12 +96943,33 @@ TF-SMD_TF-CARD-H1.8
 15
 13
 soundpad_library
+Toggle SPDT Prongs
+
+
+0
+3
+3
+soundpad_library
+Toggle SPST Prongs
+
+
+0
+2
+2
+soundpad_library
 Toggle Submini DPDT Prongs
 
 
 0
 6
 6
+soundpad_library
+Toggle_ON-OFF-(ON)_100SP5T
+
+
+0
+3
+3
 soundpad_library
 USB-C-SMD_TYPE-602-T3
 
@@ -96732,3 +96984,24 @@ USB-C_SMD-TYPE-C-31-M-12
 0
 22
 20
+switches
+100SP5T4B4VS2QE
+100SP5T4B4VS2QE-1
+Switch
+0
+7
+7
+switches
+Low-Profile_Push_Button
+
+
+0
+6
+6
+switches
+RT Switch 8 Pole
+
+
+0
+8
+8

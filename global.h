@@ -18,7 +18,7 @@ enum LogCategory {
 //LOGG filter tool
 
 // bitmask, comment out to disable monitoring, | between categories
-#define LOGG (GENERAL | BUTTON | SD_CARD) // start serial over USB Logger class
+//#define LOGG (GENERAL | BUTTON | SD_CARD) // start serial over USB Logger class
 
 //inline to not generate multiple definitions
 inline void mLog(LogCategory category, const char* format, ...) {
